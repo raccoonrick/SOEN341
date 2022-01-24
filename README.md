@@ -1,7 +1,7 @@
 # SOEN341
 
-##Objective
+## Objective
 
-##Project Description
+## Project Description
 
-##Team members
+## Team members
