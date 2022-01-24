@@ -5,7 +5,7 @@
 ## Project Description
 
 ## Team members
-| Name | Github Name |
+| Name | GitHub user name |
 | ------------- | ------------- |
 |  Dina Yashaev| superdina68 |
 | Sharjanan Staniculas  | Content Cell  |
