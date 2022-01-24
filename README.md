@@ -18,4 +18,6 @@
 
 ## Languages & Techniques
 1.Front-End Languages
--Second nested list item
+*CSS
+*HTML
+*Bootstrap
