@@ -7,5 +7,12 @@
 ## Team members
 | Name | Github Name |
 | ------------- | ------------- |
-| Tharsipa Nadarajah | Tharsipa  |
-| Content Cell  | Content Cell  |
+|  Dina Yashaev| superdina68 |
+| Sharjanan Staniculas  | Content Cell  |
+| Ricky Jr Mungcal  | raccoonrick  |
+| Jean-Philippe Forget  | J-P-engdev  |
+| Ahed Memas  | Ahed752  |
+| Carla Shawi  | Carla Shawi  |
+| Tharsipa Nadarajah  | Tharsipa  |
+| Fida Inthesar   | Content Cell  |
+
