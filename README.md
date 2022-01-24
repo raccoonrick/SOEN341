@@ -17,8 +17,9 @@
 | Fida Inthesar   | Content Cell  |
 
 ## Languages & Techniques
-Front-End Languages
+1. Front-End Languages
 * CSS
 * HTML
 * Bootstrap
-Back-End Languages
+
+2. Back-End Languages
