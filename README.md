@@ -18,6 +18,6 @@
 
 ## Languages & Techniques
 1.Front-End Languages
-*CSS
-*HTML
-*Bootstrap
+* CSS
+* HTML
+* Bootstrap
