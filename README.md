@@ -17,5 +17,5 @@
 | Fida Inthesar   | Content Cell  |
 
 ## Languages & Techniques
--First nested list item
+1.Front-End Languages
 -Second nested list item
