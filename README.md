@@ -16,3 +16,4 @@
 | Tharsipa Nadarajah  | Tharsipa  |
 | Fida Inthesar   | Content Cell  |
 
+## Languages and Techniques
