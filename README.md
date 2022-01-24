@@ -12,7 +12,7 @@
 | Ricky Jr Mungcal  | raccoonrick  |
 | Jean-Philippe Forget  | J-P-engdev  |
 | Ahed Memas  | Ahed752  |
-| Carla Shawi  | Carla Shawi  |
+| Carla Shawi  | CarlaShawi  |
 | Tharsipa Nadarajah  | Tharsipa  |
 | Fida Inthesar   | Content Cell  |
 
