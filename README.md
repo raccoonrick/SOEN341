@@ -8,13 +8,13 @@
 | Name | GitHub user name |
 | ------------- | ------------- |
 |  Dina Yashaev| superdina68 |
-| Sharjanan Staniculas  | Content Cell  |
+| Sharjanan Staniculas  | sharjanan  |
 | Ricky Jr Mungcal  | raccoonrick  |
 | Jean-Philippe Forget  | J-P-engdev  |
 | Ahed Memas  | Ahed752  |
 | Carla Shawi  | CarlaShawi  |
 | Tharsipa Nadarajah  | Tharsipa  |
-| Fida Inthesar   | Content Cell  |
+| Fida Inthesar   | FidaInthesar  |
 
 ## Languages & Techniques
 Front-End Languages
