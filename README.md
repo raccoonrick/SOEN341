@@ -23,6 +23,6 @@ Front-End Languages
 * Bootstrap
 
 Back-End Languages
-* C++
 * Python
 * Java
+* JavaScript
