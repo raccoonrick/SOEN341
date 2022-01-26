@@ -23,5 +23,5 @@ Front-End Languages
 * Bootstrap
 
 Back-End Languages
-* Java
 * JavaScript
+* MySQL
