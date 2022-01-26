@@ -1,3 +1,5 @@
+This repository is meant for gathering user stories. User Stories are short descriptions of a need written from the perspective of a user:
+
      1) As an online customer, I need to search for products, so that I can find the ones I want to buy.
 acceptance criteria: 
    * Search for a product by name or category.
