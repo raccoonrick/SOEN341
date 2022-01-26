@@ -2,6 +2,8 @@
 
 ## Objective
 
+Implement an e-commerce website similar to Amazon.
+
 ## Project Description
 
 ## Team members
