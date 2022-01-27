@@ -6,6 +6,8 @@ Implement an e-commerce website similar to Amazon.
 
 ## Project Description
 
+## Core features 
+
 ## Team members
 | Name | GitHub user name |
 | ------------- | ------------- |
