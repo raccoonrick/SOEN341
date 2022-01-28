@@ -2,7 +2,7 @@
 
 ## Objective
 
-Implement an e-commerce website similar to Amazon.
+Implement an e-commerce website similar to Amazon while demonstrating the implementation and significance of software process
 
 ## Project Description
 
