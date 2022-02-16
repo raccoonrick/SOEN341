@@ -1,243 +1,225 @@
-@import url("https://fonts.googleapis.com/css?family=Acme|Lobster|Patua+One|Rubik|Sniglet");
-* {
-  box-sizing: border-box;
-}
-header,
-section {
-  overflow-x: hidden;
-}
-.logo{
-image-orientation: 300 ;
-}
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap');
 
-:root {
-  --Sniglet-font: "Sniglet", cursive;
-  --Rubik: "Rubik", cursive;
-  --Patua: "Patua One", cursive;
-  --Lobster: "lobster", cursive;
-  --light-black: #2e2c2caf;
-  --bggradient: linear-gradient(to bottom, #55aad1, #172746);
-  --light-gray: rgba(255, 255, 255, 0.877);
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
 }
-
-header a {
-  font-family: var(--Sniglet-font);
-  font-size: 0.9em;
-  color: whitesmoke;
+body{
+    line-height: 1.5;
 }
+.card-wrapper{
+    max-width: 1100px;
+    margin: 0 auto;
+}
+img{
+    width: 50%;
+    display: block;
+}
+.img-display{
+    overflow: hidden;
+   max-height:auto;
+}
+.img-showcase{
 
-.dropdown-content {
+    display:flex;
+    width: 103%;
+    transition: all 0.5s ease;
+}
+.img-showcase img{
+  
+    min-width: 100%;
+}
+.img-select{
+    display: flex;
+}
+.img-item{
+    margin: 0.3rem;
+}
+.img-item:nth-child(1),
+.img-item:nth-child(2),
+.img-item:nth-child(3){
+    margin-right: 0;
+}
+.img-item:hover{
+    opacity: 0.8;
+}
+.product-content{
+    padding: 2rem 1rem;
+}
+.product-title{
+    font-size: 3rem;
+    text-transform: capitalize;
+    font-weight: 700;
+    position: relative;
+    color: #12263a;
+    margin: 1rem 0;
+}
+.product-title::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 80px;
+    background: #12263a;
+}
+.product-link{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.9rem;
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    background: #256eff;
+    color: #fff;
+    padding: 0 0.3rem;
+    transition: all 0.5s ease;
+}
+.product-link:hover{
+    opacity: 0.9;
+}
+.product-rating{
+    color: #ffc107;
+}
+.product-rating span{
+    font-weight: 600;
+    color: #252525;
+}
+.product-price{
+    margin: 1rem 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+.product-price span{
+    font-weight: 400;
+}
+.last-price span{
+    color: #f64749;
+    text-decoration: line-through;
+}
+.new-price span{
+    color: #256eff;
+}
+.product-detail h2{
+    text-transform: capitalize;
+    color: #12263a;
+    padding-bottom: 0.6rem;
+}
+.product-detail p{
+    font-size: 0.9rem;
+    padding: 0.3rem;
+    opacity: 0.8;
+}
+.product-detail ul{
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+.product-detail ul li{
+    margin: 0;
+    list-style: none;
+    background: url(shoes_images/checked.png) left center no-repeat;
+    background-size: 18px;
+    padding-left: 1.7rem;
+    margin: 0.4rem 0;
+    font-weight: 600;
+    opacity: 0.9;
+}
+.product-detail ul li span{
+    font-weight: 400;
+}
+.purchase-info{
+    margin: 1.5rem 0;
+}
+.purchase-info input,
+.purchase-info .btn{
+    border: 1.5px solid #ddd;
+    border-radius: 25px;
+    text-align: center;
+    padding: 0.45rem 0.8rem;
+    outline: 0;
+    margin-right: 0.2rem;
+    margin-bottom: 1rem;
+}
+.purchase-info input{
+    width: 80px;
+max-width: 100%;
+height: auto;
+}
+.purchase-info .btn{
+    cursor: pointer;
+    color: #fff;
+}
+.purchase-info .btn:first-of-type{
+    background: #256eff;
+}
+.purchase-info .btn:last-of-type{
+    background: #f64749;
+}
+.purchase-info .btn:hover{
+    opacity: 0.9;
+}
+.social-links{
+    display: flex;
+    align-items: center;
+}
+.social-links a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    color: #000;
+    border: 1px solid #000;
+    margin: 0 0.2rem;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: all 0.5s ease;
+}
+.social-links a:hover{
+    background: #000;
+    border-color: transparent;
+    color: #fff;
+}
+.loupe {
   display: none;
   position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  box-shadow: 5px 5px 12px black;
+  background: rgba(0, 0, 0, 0.25);
+  cursor: crosshair;
+  overflow: hidden;
 }
 
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-header .nav-item:last-child {
-  padding-right: 10.5em;
-}
-
-header .nav-item {
-  padding: 0.9em;
-}
-
-header .navbar-brand {
-  padding-left: 8rem;
-}
-
-header .nav-link:hover {
-  color: black;
-}
-
-header .row .col-md-7 {
-  padding: 22vmin 1vmin;
-  padding-bottom: 35vmin;
-}
-
-header .row .col-md-5 {
-  padding: 4.2vmin 1vmin;
-}
-
-header .row .col-md-5 img {
-  width: 90%;
-}
-
-header {
-  background: #172746;
-  /* fallback for old browsers */
-  background: var(--bggradient);
-}
-
-header .container .col-md-7 {
-  font-family: "Rubik", sans-serif;
-}
-
-header .container .col-md-7 h6 {
-  padding: 1vmin;
-  letter-spacing: 4px;
-}
-
-header .container .col-md-7 h1 {
-  font-size: 8.5vmin;
-  font-weight: bold;
-  padding: 0.1em 0em;
-}
-
-header .container .col-md-7 p {
-  padding: 1vmin 5vmin;
-}
-
-.primary-btn {
-  border-radius: 30px;
-  font-weight: bold;
+.loupe img {
+  position: absolute;
+  right: 0;
 }
 
 
-.cover {
-    width: 100%;
-    height: 55vmin;
-    background: url("../img/logo.jpeg");
-    background-position: -20rem -19rem;
-    background-size: 98%;
-    position: relative;
-  }
-  
-  .cover .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 999;
-  }
-  
-  .cover .content {
-    width: 100%;
-    height: 100%;
-    background: rgba(1, 25, 44, 0.938);
-    padding-top: 19vmin;
-  }
-  
-  .cover .content > h1 {
-    font-family: var(--Patua);
-    font-size: 6vmin;
-    color: whitesmoke;
-  }
-  
-  .cover .content > p {
-    font-family: var(--Rubik);
-    font-size: 2vmin;
-    color: #e5e5e5;
-  }
-  
-  .numbers .rect {
-    position: relative;
-    z-index: 1;
-    background: white;
-    width: 17rem;
-    height: 12rem;
-    padding-top: 3.5vmin;
-    margin: 1rem;
-    border-radius: 0.5em;
-    box-shadow: 1px 2px 50px 0px rgba(7, 8, 59, 0.938);
-  }
-  
-  .numbers {
-    margin-top: -15vmin;
-  }
-  
-  .numbers .rect h1 {
-    font-size: 5rem;
-    color: rgb(67, 140, 150);
-  }
-  
-  .numbers .rect > p {
-    font-family: var(--Patua);
-  }
-  
-  
-  .section-2 {
-    height: 70vmin;
-    margin-top: 15vmin;
-    background: var(--bggradient);
-  }
-  
-  .section-2 .col-md-12 > h1 {
-    padding: 2em 0 0.5em 0;
-    color: whitesmoke;
-    font-size: 6vmin;
-  }
+@media screen and (min-width: 992px){
+    .card{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1.5rem;
+    }
+    .card-wrapper{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .product-imgs{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .product-content{
+        padding-top: 0;
+    }
 
-  .section-2 .col-md-12 > p {
-    padding: 0 4em;
-    padding-bottom: 2em;
-    color: var(--light-gray);
-    font-size: 3vmin;
-  }
-  
-  .section-2 .desktop {
-    background: white;
-    display: inline-block;
-    border-radius: 3em;
-    padding: 2vmin 4.5vmin;
-    margin: 1em;
-  }
-  
-  .section-2 .desktop h3 {
-    font-size: 4vmin;
-  }
-  
-  .section-2 .desktop p {
-    font-size: 2vmin;
-  }
-  
-  footer {
-    background: rgba(202, 213, 224, 0.575);
-    overflow-x: hidden;
-    padding: 14vmin 18vmin;
-  }
-  
-  footer p > span {
-    color: #2039a775;
-  }
-  
-  footer input {
-    border: none !important;
-  }
-  
-  footer input::placeholder {
-    color: white !important;
-  }
-  
-  footer .input-group .input-group-text {
-    background: var(--bggradient);
-    border: none;
-  }
-  
-  footer .column i {
-    color: #070707;
-  }
- 
-  footer .column i + i {
-    padding: 0 0.5em;
-  }
-  .rect{
-    text-align: center;
-  }
+}

@@ -29,7 +29,7 @@ if(isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == true){
  <header>
  <div class="container-fluid p-0">
     <nav class="navbar navbar-expand-lg">
-      <div class="logo">   <a href="/"> <img src="assets/img/logo.png" width="90" height = "80" >Soenify</a></div>
+      <div class="logo">   <a href="/"> <img src="img/logo.png" width="90" height = "80" >Soenify</a></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -39,13 +39,32 @@ if(isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == true){
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
+              <?php
+              if(isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == true){
+                echo "<li class='nav-item'>";
+                echo "<a class='nav-link active' aria-current='page' href='addproduct.php'>Add Product</a>";
+                echo "</li>";
+              } 
+
+              ?>
               <li class="nav-item dropdown">
                   <div class="dropdown">
-                      <a href="#" class="nav-link">Categories</a>
+                      <a href="categories.php" class="nav-link">Categories</a>
                       <div class="dropdown-content">
-                          <a href="#">Electronics</a>
+                        <?php
+                        require_once "config.php";
+                        $sql = "SELECT * FROM categories";
+                        $result = $link->query($sql);
+                        
+                        if($result->num_rows > 0){
+                            while($row = $result->fetch_assoc()){
+                              echo "<a href='categories/" . $row["cat_link"] . "'>" . $row["cat_name"] . "</a>";
+                            }
+                        }
+                        ?>
+                          <!-- <a href="#">Electronics</a>
                           <a href="#">Home Goods</a>
-                          <a href="#">Toys </a>
+                          <a href="#">Toys </a> -->
                       </div>
                   </div> 
               </li>
@@ -84,7 +103,7 @@ if(isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == true){
              </p>
          </div>
          <div class="col-md-5 col-sm-12 h-25">
-             <img src ="assets/img/shop.jpg" alt="Soenify" width = "200" height = "300" />   
+             <img src ="img/shop.jpg" alt="Soenify" width = "200" height = "300" />   
         </div>
      </div>
  </div>
@@ -93,7 +112,7 @@ if(isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == true){
    <section class = "section-1 container-fluid p-0">
        <div class = "cover">
            <div class="content text-center">
-               <h1>What made us Unique</h1>
+               <h1>What makes us Unique</h1>
                <p>
                 No more rushing to markets and stores. Our items are sealed and delivered straight to your door.
                 You have everything you need at all times.
