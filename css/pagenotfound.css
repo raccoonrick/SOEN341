@@ -1,0 +1,15 @@
+@import url(https://db.onlinewebfonts.com/c/68b898f6044bbee439423445076f3168?family=Roxborough+CF+Thin);
+
+body {
+    background-color: #EBE9E9;
+}
+.picture {
+    float: left;
+}
+.text {
+    float:left;
+}
+.text h1 {
+    width: 60%;
+    float:left;
+}
