@@ -16,6 +16,10 @@
     crossorigin="anonymous">
     <link rel =  "stylesheet" href = "../css/subcat.css">
     <link rel =  "stylesheet" href = "../css/headernfooter.css">
+     <link rel="stylesheet" href="/css/cartStyle.css">
+     <!--ICONS-->
+   <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
+   <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
 <body>
@@ -65,9 +69,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Orders & Returns</a>
                         </li>
-                        <!--Cart-->
+                       <!--Cart-->
                         <li class="nav-item">
-                            <a class="nav-link" href="cart.html"><i class="fa fa-shopping-cart"></i>   Cart</a>
+                            <a class="nav-link" href="#"><i class="fa fa-shopping-cart" id="cart-icon"></i>   Cart</a>
                         </li>
                     </ul>
                 </div>
@@ -97,6 +101,32 @@
         </nav>
 
     </div>
+     <!--Navigation-->
+    <div class="nav container">
+         
+        <!--cart icon-->
+       
+
+        <!--CART-->
+        <div class="cart">
+           <h2 class="cart-title"></h2>
+
+           <div class="cart-content">
+
+           
+           </div>
+           <!--Total calculations-->
+           <div class="total">
+              <div class="total-title">Total</div>
+              <div class="total-price">$0</div>
+           </div>
+           <!--Purchase button-->
+           <button type="button" class="btn-buy">Buy Now</button> 
+
+           <!--Close cart button-->
+           <i class='bx bx-x' id="close-cart"></i>
+        </div>
+     </div>
 </header>
 <!--end of header-->
 
@@ -113,7 +143,7 @@
             <div class="product-grid">
                 <div class="product-image">
                     <a href="../src/Lipstick.html" class="image">
-                        <img class="pic-1" src="../img/Lipstick1.jpg">
+                        <img class="pic-1 product-img" src="../img/Lipstick1.jpg">
                         <img class="pic-2" src="../img/Lipstick2.jpg">
                     </a>
                     <a href="" class="product-like-icon"><i class="far fa-heart"></i></a>
@@ -121,11 +151,11 @@
                         <li><a href="#"><i class="far fa-heart"></i></a></li>
                         <li><a href="#"><i class="fa fa-random"></i></a></li>
                         <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                        <li><a href="#"><i class="fa fa-shopping-cart  add-cart"></i></a></li>
                     </ul>
                 </div>
                 <div class="product-content">
-                    <h3 class="title"><a href="#">NYX LipStick</a></h3>
+                    <h3 class="title  product-title"><a href="#">NYX LipStick</a></h3>
                     <div class="price">$9.99</div>
                 </div>
             </div>
@@ -134,7 +164,7 @@
             <div class="product-grid">
                 <div class="product-image">
                     <a href="../src/Eyeshadow.html" class="image">
-                        <img class="pic-1" src="../img/Eyeshadow1.jpg">
+                        <img class="pic-1 product-img" src="../img/Eyeshadow1.jpg">
                         <img class="pic-2" src="../img/Eyeshadow2.jpg">
                     </a>
                     <a href="" class="product-like-icon"><i class="far fa-heart"></i></a>
@@ -142,11 +172,11 @@
                         <li><a href="#"><i class="far fa-heart"></i></a></li>
                         <li><a href="#"><i class="fa fa-random"></i></a></li>
                         <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                        <li><a href="#"><i class="fa fa-shopping-cart add-cart"></i></a></li>
                     </ul>
                 </div>
                 <div class="product-content">
-                    <h3 class="title"><a href="#">NYX EyeShadow Palette</a></h3>
+                    <h3 class="title product-title"><a href="#">NYX EyeShadow Palette</a></h3>
                     <div class="price">$6.49</div>
                 </div>
             </div>
@@ -155,7 +185,7 @@
             <div class="product-grid">
                 <div class="product-image">
                     <a href="../src/Eyeliner.html" class="image">
-                        <img class="pic-1" src="../img/Eyeliner1.jpg">
+                        <img class="pic-1 product-img" src="../img/Eyeliner1.jpg">
                         <img class="pic-2" src="../img/Eyeliner2.jpg">
                     </a>
                     <a href="" class="product-like-icon"><i class="far fa-heart"></i></a>
@@ -163,11 +193,11 @@
                         <li><a href="#"><i class="far fa-heart"></i></a></li>
                         <li><a href="#"><i class="fa fa-random"></i></a></li>
                         <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                        <li><a href="#"><i class="fa fa-shopping-cart add-cart"></i></a></li>
                     </ul>
                 </div>
                 <div class="product-content">
-                    <h3 class="title"><a href="#">NYX EyeLiner</a></h3>
+                    <h3 class="title  product-title"><a href="#">NYX EyeLiner</a></h3>
                     <div class="price">$6.49</div>
                 </div>
             </div>
