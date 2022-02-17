@@ -16,6 +16,10 @@
     crossorigin="anonymous">
     <link rel =  "stylesheet" href = "../css/subcat.css">
     <link rel =  "stylesheet" href = "../css/headernfooter.css">
+    <link rel="stylesheet" href="/css/cartStyle.css">
+     <!--ICONS-->
+   <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
+   <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
 
 </head>
 <body>
@@ -65,10 +69,10 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Orders & Returns</a>
                         </li>
-                        <!--Cart-->
-                        <li class="nav-item">
-                            <a class="nav-link" href="cart.html"><i class="fa fa-shopping-cart"></i>   Cart</a>
-                        </li>
+                       <!--Cart-->
+                       <li class="nav-item">
+                        <a class="nav-link" href="#" id="cart-icon"><i class="fa fa-shopping-cart" ></i>   Cart</a>
+                    </li>
                     </ul>
                 </div>
             </div>
@@ -97,6 +101,32 @@
         </nav>
 
     </div>
+    <!--Navigation-->
+    <div class="nav container">
+         
+        <!--cart icon-->
+       
+
+        <!--CART-->
+        <div class="cart">
+           <h2 class="cart-title"></h2>
+
+           <div class="cart-content">
+
+           
+           </div>
+           <!--Total calculations-->
+           <div class="total">
+              <div class="total-title">Total</div>
+              <div class="total-price">$0</div>
+           </div>
+           <!--Purchase button-->
+           <button type="button" class="btn-buy">Buy Now</button> 
+
+           <!--Close cart button-->
+           <i class='bx bx-x' id="close-cart"></i>
+        </div>
+     </div>
 </header>
 <!--end of header-->
 
@@ -114,7 +144,7 @@
             <div class="product-grid">
                 <div class="product-image">
                     <a href="../src/Blanket.html" class="image">
-                        <img class="pic-1" src="../img/Blanket1.jpeg">
+                        <img class="pic-1 product-img" src="../img/Blanket1.jpeg">
                         <img class="pic-2" src="../img/Blanket3.jpeg">
                     </a>
                     <a href="" class="product-like-icon"><i class="far fa-heart"></i></a>
@@ -122,11 +152,11 @@
                         <li><a href="#"><i class="far fa-heart"></i></a></li>
                         <li><a href="#"><i class="fa fa-random"></i></a></li>
                         <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                        <li><a href="#"><i class="fa fa-shopping-cart add-cart"></i></a></li>
                     </ul>
                 </div>
                 <div class="product-content">
-                    <h3 class="title"><a href="#">Cozy Blanket</a></h3>
+                    <h3 class="title product-title"><a href="#">Cozy Blanket</a></h3>
                     <div class="price">$20.99</div>
                 </div>
             </div>
@@ -136,7 +166,7 @@
             <div class="product-grid">
                 <div class="product-image">
                     <a href="../src/WallDecor.html" class="image">
-                        <img class="pic-1" src="../img/Walldecor1.jpeg">
+                        <img class="pic-1 product-img" src="../img/Walldecor1.jpeg">
                         <img class="pic-2" src="../img/Walldecor2.jpeg">
                     </a>
                     <a href="" class="product-like-icon"><i class="far fa-heart"></i></a>
@@ -144,11 +174,11 @@
                         <li><a href="#"><i class="far fa-heart"></i></a></li>
                         <li><a href="#"><i class="fa fa-random"></i></a></li>
                         <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                        <li><a href="#"><i class="fa fa-shopping-cart add-cart"></i></a></li>
                     </ul>
                 </div>
                 <div class="product-content">
-                    <h3 class="title"><a href="#">Wall Painting</a></h3>
+                    <h3 class="title product-title"><a href="#">Wall Painting</a></h3>
                     <div class="price">$20.99</div>
                 </div>
             </div>
@@ -157,7 +187,7 @@
             <div class="product-grid">
                 <div class="product-image">
                     <a href="../src/Candles.html" class="image">
-                        <img class="pic-1" src="../img/Candle1.jpeg">
+                        <img class="pic-1 product-img" src="../img/Candle1.jpeg">
                         <img class="pic-2" src="../img/Candle2.jpeg">
                     </a>
                     <a href="" class="product-like-icon"><i class="far fa-heart"></i></a>
@@ -165,11 +195,11 @@
                         <li><a href="#"><i class="far fa-heart"></i></a></li>
                         <li><a href="#"><i class="fa fa-random"></i></a></li>
                         <li><a href="#"><i class="fa fa-eye"></i></a></li>
-                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                        <li><a href="#"><i class="fa fa-shopping-cart add-cart"></i></a></li>
                     </ul>
                 </div>
                 <div class="product-content">
-                    <h3 class="title"><a href="#">limoncello candle</a></h3>
+                    <h3 class="title product-title"><a href="#">limoncello candle</a></h3>
                     <div class="price">$20.99</div>
                 </div>
             </div>
@@ -252,5 +282,7 @@
 </footer>
 <!--End of footer-->
     </div>
+<!--Link to JS-->
+<script src="/js/cart.js"></script>
 </body>
 </html>

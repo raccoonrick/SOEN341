@@ -2,13 +2,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 .cart{
+   background-color: #424140;
+   color: white;
    position: fixed;
    top: 0;
    right: -100%;
    width: 360px;
    min-height: 100vh;
    padding: 20px;
-   background: var(--bg-color);
    box-shadow: -2px 0 4px hsl(0 4% 15% / 10%);
    transition: 0.3s;
 }
@@ -28,11 +29,9 @@
 } 
 
 #cart-icon{
-   font-size: 2rem;
+
    cursor: pointer;
-   padding-left: 85rem;
-   padding-top: 1rem;
-   size: 10px;
+   
 }
 
 
