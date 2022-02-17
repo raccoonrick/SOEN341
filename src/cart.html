@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Shopping Cart</title>
+   <!--TO CSS-->
+   <link rel="stylesheet" href="/SOEN341/css/cartStyle.css">
+
+   <!--ICONS-->
+   <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
+   <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+
+
+</head>
+
+<body>
+   <header>
+      <!--Navigation-->
+      <div class="nav container">
+         
+         <!--cart icon-->
+         <i class='bx bx-cart' id="cart-icon"></i>
+
+         <!--CART-->
+         <div class="cart">
+            <h2 class="cart-title"></h2>
+
+            <div class="cart-content">
+
+            
+            </div>
+            <!--Total calculations-->
+            <div class="total">
+               <div class="total-title">Total</div>
+               <div class="total-price">$0</div>
+            </div>
+            <!--Purchase button-->
+            <button type="button" class="btn-buy">Buy Now</button> 
+
+            <!--Close cart button-->
+            <i class='bx bx-x' id="close-cart"></i>
+         </div>
+      </div>
+   </header>
+
+   <!--STORE ITEMS-->
+   <section class="shop container">
+      <h2 class="section-title">Shop Products</h2>
+
+      <div class="shop-content">
+         <div class="product-box">
+            <img src="img/item1.jfif" alt="" class="product-img">
+            <h2 class="product-title">item1</h2>
+            <span class="price">19.99$</span>
+            <i class="bx bx-shopping-bag  add-cart"></i>
+         </div>
+      </div>
+      <div class="shop-content">
+         <div class="product-box">
+            <img src="img/item2.jfif" alt="" class="product-img">
+            <h2 class="product-title">item2</h2>
+            <span class="price">12.44$</span>
+            <i class="bx bx-shopping-bag add-cart"></i>
+         </div>
+      </div>
+      <div class="shop-content">
+         <div class="product-box">
+            <img src="img/item3.jfif" alt="" class="product-img">
+            <h2 class="product-title">item3</h2>
+            <span class="price">11.90$</span>
+            <i class="bx bx-shopping-bag add-cart"></i>
+         </div>
+      </div>
+      <div class="shop-content">
+         <div class="product-box">
+            <img src="img/item4.jfif" alt="" class="product-img">
+            <h2 class="product-title">item4</h2>
+            <span class="price">31.85$</span>
+            <i class="bx bx-shopping-bag add-cart"></i>
+         </div>
+      </div>
+   </section>
+
+   <!--Link To JS-->
+   <script src="/SOEN341/js/cart.js"></script>
+
+
+</body>
+</html>
