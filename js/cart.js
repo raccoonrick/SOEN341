@@ -14,7 +14,7 @@ closeCart.onclick = () => {
 };
 
 
-// Working Cart
+//  Working Cart
 if (document.readyState == 'loading'){
    document.addEventListener("DOMContentLoaded", ready);
 }else{
