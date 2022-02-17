@@ -15,8 +15,94 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
     crossorigin="anonymous">
     <link rel =  "stylesheet" href = "../css/categories.css">
+    <link rel =  "stylesheet" href = "../css/header.css">
 </head>
 <body>
+<!--Header-->
+<header>
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg">
+            <div class="logo">   <a href="index.html"> <img src="../img/logotrans.png" width="255.25" height = "96.25" alt=""></a></div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navlist">
+                <div class = "mr-auto"></div>
+                <ul class="navbar-nav">
+                    <li class="nav-item"></li>
+                    <!--Search bar-->
+                    <div class="wrap">
+                        <div class="search">
+                            <input type="text" class="searchTerm" placeholder="Search for a product">
+                            <button type="submit" class="searchButton">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </ul>
+
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <div class = "mr-auto"></div>
+                        <ul class="navbar-nav">
+                            <!--Login-->
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fa fa-fw fa-user"></i>Sign in</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <div class="dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#"  id="navbarDropdown" role="button"
+                                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Account</a>
+                                    <div class="dropdown-content">
+                                        <a href="#">My Account</a>
+                                        <a href="#">Wish List</a>
+                                        <a href="#">Sign out</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <!--Orders/Returns-->
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Orders & Returns</a>
+                            </li>
+                            <!--Cart-->
+                            <li class="nav-item">
+                                <a class="nav-link" href="#"><i class="fa fa-shopping-cart"></i>   Cart</a>
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+        </nav>
+        <section>
+        <!--Dropdown menu for departments-->
+        <div class="collapse navbar-collapse" id="navbarNav2">
+            <div class = "mr-auto"></div>
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <div class="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#"  id="navbarDropdown2" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop All Departments</a>
+                        <div class="dropdown-content">
+                            <a href="#">Arts, Crafts & Sewing</a>
+                            <a href="#">Automotive Parts & Accessories</a>
+                            <a href="#">Books</a>
+                            <a href="#">Electronics, Computer & Office</a>
+                            <a href="#">Garden & Outdoor</a>
+                            <a href="#">Groceries </a>
+                            <a href="#">Health & Beauty</a>
+                            <a href="#">Home & Kitchen</a>
+                            <a href="#">Pet Supplies</a>
+                            <a href="#">Sports & Outdoors</a>
+                            <a href="#">Toys, Kids & Baby</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        </section>
+    </div>
+</header>
+    <!--end of header-->
+
     <div class="card-deck">
 
         <h1 style="text-align: center; color: white; width: 100%; font-size: 6rem">DEPARTMENTS</h1>
@@ -85,10 +171,10 @@
           </div>
         </div>
         </div>
-      </div>
+
       <br/> 
       <div class="text-center" >
-     <a href = "../src/addnewcategory.html" class="btn btn-outline-primary" style="float: left-center;">Add new category</a>
+     <a href = "../src/addnewcategory.html" class="btn btn-outline-primary" style="display: inline-block;">Add new category</a>
       </div>
   </body>
  </html>
