@@ -15,6 +15,11 @@
       crossorigin="anonymous"
     />
     <link rel =  "stylesheet" href = "../css/headernfooter.css">
+    <link rel="stylesheet" href="/css/cartStyle.css">
+
+    <!--ICONS-->
+   <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
+   <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
   </head>
   <body>
   <!--Header-->
@@ -63,9 +68,9 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">Orders & Returns</a>
               </li>
-              <!--Cart-->
-              <li class="nav-item">
-                <a class="nav-link" href="cart.html"><i class="fa fa-shopping-cart"></i>   Cart</a>
+               <!--Cart-->
+               <li class="nav-item">
+                <a class="nav-link" href="#"  id="cart-icon"><i class="fa fa-shopping-cart" ></i>   Cart</a>
               </li>
             </ul>
           </div>
@@ -95,6 +100,28 @@
         </div>
       </section>
     </div>
+    <!--Navigation-->
+    <div class="nav container">
+      <!--CART-->
+      <div class="cart">
+         <h2 class="cart-title"></h2>
+
+         <div class="cart-content">
+
+         
+         </div>
+         <!--Total calculations-->
+         <div class="total">
+            <div class="total-title">Total</div>
+            <div class="total-price">$0</div>
+         </div>
+         <!--Purchase button-->
+         <button type="button" class="btn-buy">Buy Now</button> 
+
+         <!--Close cart button-->
+         <i class='bx bx-x' id="close-cart"></i>
+      </div>
+   </div>
   </header>
   <!--end of header-->
     <div class="card-wrapper">
@@ -103,7 +130,7 @@
         <div class="product-imgs">
           <div class="img-display">
             <div class="img-showcase">
-              <img src="../img/TV1.jpg" alt="TV image" />
+              <img class="product-img" src="../img/TV1.jpg" alt="TV image" />
               <img src="../img/TV2.jpg" alt="TV  image" />
               <img src="../img/TV3.jpg" alt="TV  image" />
             </div>
@@ -141,7 +168,7 @@
 
           <div class="product-price">
             <p class="last-price">Old Price: <span>$1678.99</span></p>
-            <p class="new-price">New Price: <span>$1499.99</span></p>
+            <p class="new-price">New Price: <span class="price">$1499.99</span></p>
           </div>
 
           <div class="product-detail">
@@ -156,7 +183,7 @@
 
           <div class="purchase-info">
             <input type="number" min="0" value="1" />
-            <button type="button" class="btn">
+            <button type="button" class="btn add-cart">
               Add to Cart <i class="fas fa-shopping-cart"></i>
             </button>
           </div>
@@ -258,5 +285,6 @@
   </footer>
   <!--End of footer-->
     <script src="../js/script.js"></script>
+    <script src="/js/cart.js"></script>
   </body>
 </html>
