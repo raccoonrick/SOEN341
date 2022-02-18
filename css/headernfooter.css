@@ -113,13 +113,10 @@ nav{
 #navbarNav {
   width: 100%;
   display: inline-block;
-
 }
 #navbarNav2 {
   width: 100%;
   display: inline-block;
-
-
 }
 
 #nav-item {
@@ -141,27 +138,21 @@ header .nav-link:hover {
 
 body {
   background: #424140;
-  margin: 0;
 }
 
 /*footer starts here*/
 footer {
   width: 100%;
+  margin-top: 100px;
   min-height: 100%;
   background: linear-gradient(to bottom, #AFC1BE 50%, #424140 50%);
-  overflow-x: hidden;
   padding: 3vmin;
   font-family: "Roxborough CF Thin";
 
-
 }
 .logo{
-  padding-top: 45px;
+  padding-top: 65px;
   padding-right: 75px;
-}
-section {
-  padding-top: 5vmin;
-  overflow-x: hidden;
 }
 
 footer p > span {
