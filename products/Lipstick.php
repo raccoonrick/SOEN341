@@ -1,27 +1,12 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Product Description</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
+<?php include "../header.php";?>
+<link rel="stylesheet" href="../css/style.css" />
     <div class="card-wrapper">
       <div class="card">
         <!-- card left -->
         <div class="product-imgs">
           <div class="img-display">
             <div class="img-showcase">
-              <img src="../img/Lipstick1.jpg" alt="LipStick image" />
+              <img class="product-img" src="../img/Lipstick1.jpg" alt="LipStick image" />
               <img src="../img/Lipstick2.jpg" alt="LipStick image" />
               <img src="../img/Lipstick3.jpg" alt="LipStick image" />
             </div>
@@ -62,7 +47,7 @@
 
           <div class="product-price">
             <p class="last-price">Old Price: <span>$12.99</span></p>
-            <p class="new-price">New Price: <span>$9.99</span></p>
+            <p class="new-price">New Price: <span class="price">$9.99</span></p>
           </div>
 
           <div class="product-detail">
@@ -78,7 +63,7 @@
 
           <div class="purchase-info">
             <input type="number" min="0" value="1" />
-            <button type="button" class="btn">
+            <button type="button" class="btn add-cart">
               Add to Cart <i class="fas fa-shopping-cart"></i>
             </button>
           </div>
@@ -104,7 +89,4 @@
         </div>
       </div>
     </div>
-
-    <script src="../js/script.js"></script>
-  </body>
-</html>
+    <?php include "../footer.php";?>

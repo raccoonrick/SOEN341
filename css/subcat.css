@@ -1,6 +1,8 @@
+@import url(https://db.onlinewebfonts.com/c/68b898f6044bbee439423445076f3168?family=Roxborough+CF+Thin);
+
 .product-grid{
     background-color: #fff;
-    font-family: 'Lato', sans-serif;
+    font-family: "Roxborough CF Thin";
     text-align: center;
 }
 .product-grid .product-image{ position: relative; }
@@ -32,7 +34,7 @@
     top: 10px;
     transition: all 0.3s ease 0s;
 }
-.product-grid .product-like-icon:hover{ text-shadow: 2px 2px 0 rgba(0,0,0,0.5); }
+.product-grid .product-like-icon:hover{ text-shadow: 2px 2px 0 rgb(235, 233, 233); }
 .product-grid .product-links{
     width: 100%;
     padding: 0;
@@ -66,7 +68,7 @@
     background: #0a6470;
 }
 .product-grid .product-content{
-    background-color: #fff;
+    background-color: #73938E;
     padding: 60px 60px 60px;
     position: relative;
     z-index: 1;
@@ -80,7 +82,7 @@
     margin: 0 0 7px;
 }
 .product-grid .title a{
-    color: #222;
+    color: #424140;
     transition: all 0.3s ease 0s;
 }
 .product-grid .title a:hover{ color: #0a6470; }
