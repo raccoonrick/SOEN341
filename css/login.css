@@ -1,8 +1,8 @@
 .gradient-custom-2 {
    
     /* for the backgound of right box card */
-    background: -webkit-linear-gradient(to right, #24e7ee, #3210b1, #0c0e91);
-    background: linear-gradient(to right, #24e7ee, #3210b1, #0c0e91);
+    background: -webkit-linear-gradient(to right, #585555, #424140);
+    background: linear-gradient(to right, #585555, #424140);
   }
   
   @media (min-width: 768px) {

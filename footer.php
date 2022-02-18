@@ -46,17 +46,17 @@
             <div class="bottom row text-left">
                 <div class="col-md-3 col-sm-12">
                     <h4 class="pt-3 text-light"><br>Customer Service</br></h4>
-                    <a href="pagenotfound.html" class="text-muted">Help</a>
-                    <a href="pagenotfound.html" class="text-muted"><br>Product Recalls</br></a>
-                    <a href="pagenotfound.html" class="text-muted">Shipping & Returns</a>
-                    <a href="pagenotfound.html" class="text-muted"><br>Contact Us</br></a>
+                    <a href="../pagenotfound.php" class="text-muted">Help</a>
+                    <a href="../pagenotfound.php" class="text-muted"><br>Product Recalls</br></a>
+                    <a href="../pagenotfound.php" class="text-muted">Shipping & Returns</a>
+                    <a href="../pagenotfound.php" class="text-muted"><br>Contact Us</br></a>
                 </div>
                 <div class="col-md-3 col-sm-12">
                     <h4 class="pt-3 text-light"><br>About Us</br></h4>
-                    <a href="pagenotfound.html" class="text-muted">Our Company</a>
-                    <a href="pagenotfound.html" class="text-muted"><br>Careers</br></a>
-                    <a href="pagenotfound.html" class="text-muted">Privacy Policy</a>
-                    <a href="pagenotfound.html" class="text-muted"><br>Terms of Use</br></a>
+                    <a href="../pagenotfound.php" class="text-muted">Our Company</a>
+                    <a href="../pagenotfound.php" class="text-muted"><br>Careers</br></a>
+                    <a href="../pagenotfound.php" class="text-muted">Privacy Policy</a>
+                    <a href="../pagenotfound.php" class="text-muted"><br>Terms of Use</br></a>
                 </div>
 
                 <div class="bottom right mx-auto">
