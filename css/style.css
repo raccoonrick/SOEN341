@@ -11,10 +11,10 @@ body{
 }
 .card-wrapper{
     max-width: 1100px;
-    margin: 0 auto;
+    margin:  auto;
 }
-img{
-    width: 50%;
+.product-img{ 
+    width:50%;
     display: block;
 }
 .img-display{
@@ -47,9 +47,11 @@ img{
 }
 .product-content{
     padding: 2rem 1rem;
+    margin-top:2cm;
 }
 .product-title{
     font-size: 3rem;
+    font-family: Optima, sans-serif;
     text-transform: capitalize;
     font-weight: 700;
     position: relative;
@@ -72,16 +74,17 @@ img{
     font-size: 0.9rem;
     display: inline-block;
     margin-bottom: 0.5rem;
-    background: #256eff;
+    background: #58a8ce;
     color: #fff;
     padding: 0 0.3rem;
     transition: all 0.5s ease;
 }
 .product-link:hover{
     opacity: 0.9;
+    color: #d4e7ec;
 }
 .product-rating{
-    color: #ffc107;
+    color: #f3cb53;
 }
 .product-rating span{
     font-weight: 600;
@@ -140,7 +143,7 @@ img{
     padding: 0.45rem 0.8rem;
     outline: 0;
     margin-right: 0.2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 .purchase-info input{
     width: 80px;
@@ -150,12 +153,13 @@ height: auto;
 .purchase-info .btn{
     cursor: pointer;
     color: #fff;
+   
 }
 .purchase-info .btn:first-of-type{
     background: #256eff;
 }
 .purchase-info .btn:last-of-type{
-    background: #f64749;
+    background: #58b9f1;
 }
 .purchase-info .btn:hover{
     opacity: 0.9;
@@ -166,6 +170,7 @@ height: auto;
 }
 .social-links a{
     display: flex;
+  
     align-items: center;
     justify-content: center;
     width: 32px;
@@ -173,6 +178,7 @@ height: auto;
     color: #000;
     border: 1px solid #000;
     margin: 0 0.2rem;
+    margin-bottom: 0.5cm;
     border-radius: 50%;
     text-decoration: none;
     font-size: 0.8rem;
@@ -183,22 +189,7 @@ height: auto;
     border-color: transparent;
     color: #fff;
 }
-.loupe {
-  display: none;
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  border: 1px solid black;
-  box-shadow: 5px 5px 12px black;
-  background: rgba(0, 0, 0, 0.25);
-  cursor: crosshair;
-  overflow: hidden;
-}
 
-.loupe img {
-  position: absolute;
-  right: 0;
-}
 
 
 @media screen and (min-width: 992px){
