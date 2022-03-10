@@ -1,5 +1,13 @@
 @import url(https://db.onlinewebfonts.com/c/68b898f6044bbee439423445076f3168?family=Roxborough+CF+Thin);
 
+h3{
+    color: #fff;
+}
+
+.row{
+    text-align:center; justify-content: center;
+}
+
 .product-grid{
     background-color: #fff;
     font-family: "Roxborough CF Thin";
