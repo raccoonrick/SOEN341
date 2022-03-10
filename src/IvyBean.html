@@ -1,45 +1,136 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Product Description</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
-      crossorigin="anonymous"
-    />
+    <link rel="icon" href="../img/Icon.jpg" type="image/icon type">
+        <!----CSS and Bootstrap style---->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/e6f61e0e67.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+    crossorigin="anonymous">
+    <link rel =  "stylesheet" href = "../css/headernfooter.css">
+   <link rel="stylesheet" href="../css/style.css">
+
+    <!--ICONS-->
+    <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
+   <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script> 
+   <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
   </head>
   <body>
+   <!--Header-->
+   <header>
+    <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg">
+            <div class="logo">   <a href="index.html"> <img src="../img/logotrans.png" width="255.25" height = "96.25" alt=""></a></div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navlist">
+                <div class = "mr-auto"></div>
+                <ul class="navbar-nav">
+                    <li class="nav-item"></li>
+                    <!--Search bar-->
+                    <div class="wrap">
+                        <div class="search">
+                            <input type="text" class="searchTerm" placeholder="Search for a product">
+                            <button type="submit" class="searchButton">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </ul>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <div class = "mr-auto"></div>
+                    <ul class="navbar-nav">
+                        <!--Login-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html"><i class="fa fa-fw fa-user"></i>Sign in</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <div class="dropdown">
+                                <a class="nav-link dropdown-toggle" href="#"  id="navbarDropdown" role="button"
+                                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Account</a>
+                                <div class="dropdown-content">
+                                    <a href="#">My Account</a>
+                                    <a href="#">Wish List</a>
+                                    <a href="#">Sign out</a>
+                                </div>
+                            </div>
+                        </li>
+                        <!--Orders/Returns-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="../src/orderReview.html">Orders & Returns</a>
+                        </li>
+                        <!--Cart-->
+                        <!--Cart-->
+                        <li class="nav-item">
+                            <a class="nav-link" href="../src/cart.html" id="cart-icon"><i class="fa fa-shopping-cart" ></i>   Cart</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+            <!--Dropdown menu for departments-->
+            <nav class="collapse navbar-collapse" id="navbarNav2">
+                <div class = "mr-auto"></div>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <div class="dropdown" style="top:-25px;">
+                            <a class="nav-link dropdown-toggle" href="categories.html"  id="navbarDropdown2" role="button"
+                               data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop All Departments</a>
+                            <div class="dropdown-content2">
+                                <a href="books.html">Books</a>
+                                <a href="electronics.html">Electronics, Computers & Office</a>
+                                <a href="fitness.html">Fitness Equipment</a>
+                                <a href="makeup.html">Health & Beauty</a>
+                                <a href="home.html">Home & Kitchen</a>
+                                <a href="toys.html">Toys, Kids & Baby</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+
+    </div>
+</header>
+<!--end of header-->
+<br/>
+
     <div class="card-wrapper">
       <div class="card">
         <!-- card left -->
         <div class="product-imgs">
           <div class="img-display">
             <div class="img-showcase">
-              <img src="../img/Ivy1.jpeg" alt="Book3 image" />
-              <img src="../img/Ivy2.jpeg" alt="Book3 image" />
-              <img src="../img/Ivy3.jpeg" alt="Book3 image" />
+              <img class="product-img"  src="../img/Ivy1.jpeg" alt="Book3 image" />
+              <img class="product-img" src="../img/Ivy2.jpeg" alt="Book3 image" />
+              <img class="product-img" src="../img/Ivy3.jpeg" alt="Book3 image" />
             </div>
           </div>
           <div class="img-select">
             <div class="img-item">
               <a href="#" data-id="1">
-                <img src="../img/Ivy1.jpeg" alt="Book3 image" />
+                <img class="product-img" src="../img/Ivy1.jpeg" alt="Book3 image" />
               </a>
             </div>
             <div class="img-item">
               <a href="#" data-id="2">
-                <img src="../img/Ivy2.jpeg" alt="Book3 image" />
+                <img class="product-img" src="../img/Ivy2.jpeg" alt="Book3 image" />
               </a>
             </div>
             <div class="img-item">
               <a href="#" data-id="3">
-                <img src="../img/Ivy3.jpeg" alt="Book3 image" />
+                <img class="product-img" src="../img/Ivy3.jpeg" alt="Book3 image" />
               </a>
             </div>
           </div>
@@ -62,14 +153,17 @@
             <p class="new-price">New Price: <span>$89.99</span></p>
           </div>
 
-          <div class="product-detail">
-            <h2>About this item:</h2>
-            <p>Books (4-6)</p>
-            <p>Language: English</p>
-            <ul>
-              <li>Available: <span>in stock</span></li>
-              <li>Category: <span>Books</span></li>
-            </ul>
+          <div class="accordian">
+              <button class = "btn btn-outline-secondary" onclick="displayText()" for= "title1"> More Description</button>
+                    <p id="description-text" style="display:none;"> <br/>
+            Books (4-6)
+            <br>
+            Language: English
+            <br>
+              Available: <span>in stock</span><br>
+               Category: <span> <a href="books.html">Books</a></span>
+            
+            </p>
           </div>
 
           <div class="purchase-info">
@@ -100,7 +194,81 @@
         </div>
       </div>
     </div>
+     <!--Start of footer-->
+     <footer>
+      <div class="top">
+        <div class="container-fluid p-0">
+          <div class="row text-left">
+            <div class="col-md-5 col-md-5">
+              <h4 class="text-dark">Who are we?</h4>
+              <p class = "text-muted">
+                <br>Soenify is an e-commerce website. It will include many features and products.
+                The team is available 24/7 for any occurring issues.</br>
+              </p>
+            </div>
 
-    <script src="../js/script.js"></script>
+            <div class="col-md-5 col-sm-12">
+              <h4 class="text-dark">Stay in the know</h4>
+              <p class="p-0 text-muted">Join our mailing list to get exclusive deals</p>
+              <form class="form-inline">
+                <div class="col pl-0">
+                  <div class="input-group pr-5">
+                    <input type="text" class="form-control bg-light text-white" id="inlineFormInputGroupUsername2" placeholder="Email">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <i class="fas fa-arrow-right"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <p class="text-muted">You may unsubscribe at any time.</p>
+            </div>
+
+            <div class="col-md-2 col-sm-12">
+              <h4 class="text-dark">Follow Us</h4>
+              <p class="text-muted">Lets keep in touch</p>
+              <div class="column text-dark">
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-youtube"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bottom">
+        <div class="container-fluid p-0">
+          <div class="bottom row text-left">
+            <div class="col-md-3 col-sm-12">
+              <h4 class="pt-3 text-light"><br>Customer Service</br></h4>
+              <a href="pagenotfound.html" class="text-muted">Help</a>
+              <a href="pagenotfound.html" class="text-muted"><br>Product Recalls</br></a>
+              <a href="pagenotfound.html" class="text-muted">Shipping & Returns</a>
+              <a href="pagenotfound.html" class="text-muted"><br>Contact Us</br></a>
+            </div>
+            <div class="col-md-3 col-sm-12">
+              <h4 class="pt-3 text-light"><br>About Us</br></h4>
+              <a href="pagenotfound.html" class="text-muted">Our Company</a>
+              <a href="pagenotfound.html" class="text-muted"><br>Careers</br></a>
+              <a href="pagenotfound.html" class="text-muted">Privacy Policy</a>
+              <a href="pagenotfound.html" class="text-muted"><br>Terms of Use</br></a>
+            </div>
+
+            <div class="bottom right mx-auto">
+              <div class="logo">   <a href="index.html"> <img src="../img/logotrans.png" width="382.875" height = "144.375" alt=""></a></div>
+            </div>
+
+          </div>
+        </div>
+        <div class="text-center">
+          <a class = "pt-2 text-muted" style="display: inline-block;">
+            Copyright @2022 All rights reserved Soenify </a>
+        </div>
+      </div>
+    </footer>
+    <!--End of footer-->
+    <script src="../js/products.js"></script>
   </body>
 </html>
