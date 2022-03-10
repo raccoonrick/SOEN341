@@ -1,92 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Shopping Cart</title>
-   <!--TO CSS-->
-   <link rel="stylesheet" href="/SOEN341/css/cartStyle.css">
-
-   <!--ICONS-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Soenify</title>
+    <link rel="icon" href="../img/Icon.jpg" type="image/icon type">
+    <!----CSS and Bootstrap style---->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/e6f61e0e67.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+    crossorigin="anonymous"> 
+    <link rel =  "stylesheet" href = "../css/headernfooter.css">
+    <link rel="stylesheet" href="../css/cartStyle.css">
+     <!--ICONS-->
    <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
+   <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script> 
    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-
-
-
+  
 </head>
-
 <body>
+   <!--Header-->
    <header>
-      <!--Navigation-->
-      <div class="nav container">
-         
-         <!--cart icon-->
-         <i class='bx bx-cart' id="cart-icon"></i>
-
-         <!--CART-->
-         <div class="cart">
-            <h2 class="cart-title"></h2>
-
-            <div class="cart-content">
-
-            
-            </div>
-            <!--Total calculations-->
-            <div class="total">
-               <div class="total-title">Total</div>
-               <div class="total-price">$0</div>
-            </div>
-            <!--Purchase button-->
-            <button type="button" class="btn-buy">Buy Now</button> 
-
-            <!--Close cart button-->
-            <i class='bx bx-x' id="close-cart"></i>
-         </div>
-      </div>
+       <div class="container-fluid p-0">
+           <nav class="navbar navbar-expand-lg">
+               <div class="logo">   <a href="index.html"> <img src="../img/logotrans.png" width="255.25" height = "96.25" alt=""></a></div>
+               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                   <span class="navbar-toggler-icon"></span>
+               </button>
+   
+               <div class="collapse navbar-collapse" id="navlist">
+                   <div class = "mr-auto"></div>
+                   <ul class="navbar-nav">
+                       <li class="nav-item"></li>
+                       <!--Search bar-->
+                       <div class="wrap">
+                           <div class="search">
+                               <input type="text" class="searchTerm" placeholder="Search for a product">
+                               <button type="submit" class="searchButton">
+                                   <i class="fa fa-search"></i>
+                               </button>
+                           </div>
+                       </div>
+                   </ul>
+   
+                   <div class="collapse navbar-collapse" id="navbarNav">
+                       <div class = "mr-auto"></div>
+                       <ul class="navbar-nav">
+                           <!--Login-->
+                           <li class="nav-item">
+                               <a class="nav-link" href="login.html"><i class="fa fa-fw fa-user"></i>Sign in</a>
+                           </li>
+                           <li class="nav-item dropdown">
+                               <div class="dropdown">
+                                   <a class="nav-link dropdown-toggle" href="#"  id="navbarDropdown" role="button"
+                                      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Account</a>
+                                   <div class="dropdown-content">
+                                       <a href="#">My Account</a>
+                                       <a href="#">Wish List</a>
+                                       <a href="#">Sign out</a>
+                                   </div>
+                               </div>
+                           </li>
+                           <!--Orders/Returns-->
+                           <li class="nav-item">
+                               <a class="nav-link" href="../src/orderReview.html">Orders & Returns</a>
+                           </li>
+                           <!--Cart-->
+                           <!--Cart-->
+                           <li class="nav-item">
+                               <a class="nav-link" href="../src/cart.html" id="cart-icon"><i class="fa fa-shopping-cart" ></i>   Cart</a>
+                           </li>
+                       </ul>
+                   </div>
+               </div>
+           </nav>
+   
+   
+               <!--Dropdown menu for departments-->
+               <nav class="collapse navbar-collapse" id="navbarNav2">
+                   <div class = "mr-auto"></div>
+                   <ul class="navbar-nav">
+                       <li class="nav-item dropdown">
+                           <div class="dropdown" style="top:-25px;">
+                               <a class="nav-link dropdown-toggle" href="categories.html"  id="navbarDropdown2" role="button"
+                                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop All Departments</a>
+                               <div class="dropdown-content2">
+                                   <a href="books.html">Books</a>
+                                   <a href="electronics.html">Electronics, Computers & Office</a>
+                                   <a href="fitness.html">Fitness Equipment</a>
+                                   <a href="makeup.html">Health & Beauty</a>
+                                   <a href="home.html">Home & Kitchen</a>
+                                   <a href="toys.html">Toys, Kids & Baby</a>
+                               </div>
+                           </div>
+                       </li>
+                   </ul>
+               </nav>
+   
+       </div>
    </header>
-
-   <!--STORE ITEMS-->
-   <section class="shop container">
-      <h2 class="section-title">Shop Products</h2>
-
-      <div class="shop-content">
-         <div class="product-box">
-            <img src="img/item1.jfif" alt="" class="product-img">
-            <h2 class="product-title">item1</h2>
-            <span class="price">19.99$</span>
-            <i class="bx bx-shopping-bag  add-cart"></i>
-         </div>
+   <!--end of header-->
+   <br/>
+   
+  <main>
+    <div class="basket">
+      <div class="basket-labels">
+        <ul>
+          <li class="item item-heading">Item</li>
+          <li class="price">Price</li>
+          <li class="quantity">Quantity</li>
+          <li class="subtotal">Subtotal</li>
+        </ul>
       </div>
-      <div class="shop-content">
-         <div class="product-box">
-            <img src="img/item2.jfif" alt="" class="product-img">
-            <h2 class="product-title">item2</h2>
-            <span class="price">12.44$</span>
-            <i class="bx bx-shopping-bag add-cart"></i>
-         </div>
+      <div class="basket-product">
+        <div class="item">
+          <div class="product-image">
+            <img src="../img/Airpods1.jpg" alt="Placholder Image 2" class="product-frame">
+          </div>
+          <div class="product-details">
+            <h1><strong><span class="item-quantity">1</span> Airpods 3rd generation</strong> Apple</h1>
+            <p><strong>Graved</strong></p>
+          </div>
+        </div>
+        <div class="price">210.99</div>
+        <div class="quantity">
+          <input type="number" value="1" min="1" class="quantity-field">
+        </div>
+        <div class="subtotal">210.99</div>
+        <div class="remove">
+          <button>Remove</button>
+        </div>
       </div>
-      <div class="shop-content">
-         <div class="product-box">
-            <img src="img/item3.jfif" alt="" class="product-img">
-            <h2 class="product-title">item3</h2>
-            <span class="price">11.90$</span>
-            <i class="bx bx-shopping-bag add-cart"></i>
-         </div>
+      <div class="basket-product">
+        <div class="item">
+          <div class="product-image">
+            <img src="../img/Lipstick1.jpg" alt="Placholder Image 2" class="product-frame">
+          </div>
+          <div class="product-details">
+            <h1><strong><span class="item-quantity">2</span> Magenta color Lipstick</strong> NYX </h1>
+            <p><strong>Matt</strong></p>
+          </div>
+        </div>
+        <div class="price">9.99</div>
+        <div class="quantity">
+          <input type="number" value="1" min="1" class="quantity-field">
+        </div>
+        <div class="subtotal">9.99</div>
+        <div class="remove">
+          <button>Remove</button>
+        </div>
       </div>
-      <div class="shop-content">
-         <div class="product-box">
-            <img src="img/item4.jfif" alt="" class="product-img">
-            <h2 class="product-title">item4</h2>
-            <span class="price">31.85$</span>
-            <i class="bx bx-shopping-bag add-cart"></i>
-         </div>
+    <div class="basket-product">
+      <div class="item">
+        <div class="product-image">
+          <img src="../img/Blanket2.jpeg" alt="Placholder Image 2" class="product-frame">
+        </div>
+        <div class="product-details">
+          <h1><strong><span class="item-quantity">1</span> Soft fluffy blanket</strong> Queen & King</h1>
+          <p><strong>blue</strong></p>
+        </div>
       </div>
-   </section>
+      <div class="price">20.99</div>
+      <div class="quantity">
+        <input type="number" value="1" min="1" class="quantity-field">
+      </div>
+      <div class="subtotal">20.99</div>
+      <div class="remove">
+        <button>Remove</button>
+      </div>
+    </div>
+    <br/>
 
-   <!--Link To JS-->
-   <script src="/SOEN341/js/cart.js"></script>
+    <div class="basket-module">
+      <label for="promo-code">Add a promo code</label>
+      <input id="promo-code" type="text" name="promo-code" maxlength="5" class="promo-code-field">
+      <button class="promo-code-cta">Apply</button>
+    </div>
+  </div>
+    <aside>
+      <div class="summary">
+        <div class="summary-total-items"><span class="total-items"></span> Checkout Summary</div>
+        <div class="summary-subtotal">
+          <div class="subtotal-title">Subtotal</div>
+          <div class="subtotal-value final-value" id="basket-subtotal">251.96</div>
+          <div class="subtotal-title">QST</div>
+          <div class="subtotal-value final-value" id="basket-subtotal"> 0.09975</div>
+          <div class="subtotal-title">GST</div>
+          <div class="subtotal-value final-value" id="basket-subtotal">0.05</div>
+          <div class="subtotal-title">Shipping fees</div>
+          <div class="subtotal-value final-value" id="basket-subtotal">6.99</div>
+          <div class="summary-promo hide">
+            <div class="promo-title">Promotion</div>
+            <div class="promo-value final-value" id="basket-promo"></div>
+          </div>
+        </div>
+        <div class="summary-delivery">
+          <select name="delivery-collection" class="summary-delivery-selection">
+              <option value="0" selected="selected">Select a Delivery method</option>
+             <option value="first-class">Delivery to your house</option>
+             <option value="second-class">Delivery to the nearest post office</option>
+          </select>
+        </div>
+        <div class="summary-total">
+          <div class="total-title">Total</div>
+          <div class="total-value final-value" id="basket-total">285.20</div>
+        </div>
+        <div class="summary-checkout">
+         <a href="../src/checkout.html"> <button class="checkout-cta">Continue Checkout</button></a>
+        </div>
+      </div>
+    </aside>
+  </main>
+ 
 
+  <!--Start of footer-->
+  <footer>
+    <div class="top">
+      <div class="container-fluid p-0">
+        <div class="row text-left">
+          <div class="col-md-5 col-md-5">
+            <h4 class="text-dark">Who are we?</h4>
+            <p class = "text-muted">
+              <br>Soenify is an e-commerce website. It will include many features and products.
+              The team is available 24/7 for any occurring issues.</br>
+            </p>
+          </div>
 
+          <div class="col-md-5 col-sm-12">
+            <h4 class="text-dark">Stay in the know</h4>
+            <p class="p-0 text-muted">Join our mailing list to get exclusive deals</p>
+            <form class="form-inline">
+              <div class="col pl-0">
+                <div class="input-group pr-5">
+                  <input type="text" class="form-control bg-light text-white" id="inlineFormInputGroupUsername2" placeholder="Email">
+                  <div class="input-group-prepend">
+                    <div class="input-group-text">
+                      <i class="fas fa-arrow-right"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <p class="text-muted">You may unsubscribe at any time.</p>
+          </div>
+
+          <div class="col-md-2 col-sm-12">
+            <h4 class="text-dark">Follow Us</h4>
+            <p class="text-muted">Lets keep in touch</p>
+            <div class="column text-dark">
+              <i class="fab fa-facebook"></i>
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-twitter"></i>
+              <i class="fab fa-youtube"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="container-fluid p-0">
+        <div class="bottom row text-left">
+          <div class="col-md-3 col-sm-12">
+            <h4 class="pt-3 text-light"><br>Customer Service</br></h4>
+            <a href="pagenotfound.html" class="text-muted">Help</a>
+            <a href="pagenotfound.html" class="text-muted"><br>Product Recalls</br></a>
+            <a href="pagenotfound.html" class="text-muted">Shipping & Returns</a>
+            <a href="pagenotfound.html" class="text-muted"><br>Contact Us</br></a>
+          </div>
+          <div class="col-md-3 col-sm-12">
+            <h4 class="pt-3 text-light"><br>About Us</br></h4>
+            <a href="pagenotfound.html" class="text-muted">Our Company</a>
+            <a href="pagenotfound.html" class="text-muted"><br>Careers</br></a>
+            <a href="pagenotfound.html" class="text-muted">Privacy Policy</a>
+            <a href="pagenotfound.html" class="text-muted"><br>Terms of Use</br></a>
+          </div>
+
+          <div class="bottom right mx-auto">
+            <div class="logo">   <a href="index.html"> <img src="../img/logotrans.png" width="382.875" height = "144.375" alt=""></a></div>
+          </div>
+
+        </div>
+      </div>
+      <div class="text-center">
+        <a class = "pt-2 text-muted" style="display: inline-block;">
+          Copyright @2022 All rights reserved Soenify </a>
+      </div>
+    </div>
+  </footer>
+  <!--End of footer-->
+
+<!--Link to JS-->
+<script src="../js/cart.js"></script>
+<script src="js/jquery-3.0.0.min.js"></script>
 </body>
 </html>
