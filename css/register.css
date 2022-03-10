@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600;700&display=swap');
+
+html{
+    font-size: 60%;
+    overflow-x: hidden;
+    scroll-padding-top: 6.5rem;
+    scroll-behavior: smooth;
+}
+
+*{
+    font-family: "Nunito";
+}
+
+hr{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    color:black;
+    
+}
+
+.flexboxParent{
+    display:flex;
+    flex-direction: column;
+    max-width: 42rem;
+    margin: auto;
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+}
+
+#maintitle{
+    border: 1px solid rgba(0,0,0,.1);
+    display:inline-block;
+    margin-left:auto;
+    margin-right:auto;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    background:-webkit-linear-gradient(to right,#585555, #424140);
+    background: linear-gradient(to right,#585555, #424140);
+    color:white;
+    height: 7rem;
+    padding-top:15px;
+}
+
+.formbox{
+    text-decoration: none;
+    display:inline-block;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    padding: 10px;
+    border: 1px solid rgba(0,0,0,.1);
+}
+
+body{
+    background-color: white;
+    text-align:center;
+}
+
+h2{
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.box-1{
+    color:grey;
+    margin-bottom: 5px;
+    display: block;
+}
+#FNtext{
+    display:flex;
+    height:4rem;
+
+    padding:1rem;
+    color:lightgray;
+    font-size: larger;
+    border:0.33rem solid rgba(0,0,0,.1);
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    margin-left: auto;
+    margin-right:auto;
+    margin-top:3px;
+}
+#LNtext{
+    display:flex;
+    height:4rem;
+    
+    padding:1rem;
+    color:lightgray;
+    font-size: larger;
+    border:0.33rem solid rgba(0,0,0,.1);
+    border-bottom-right-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    margin-left: auto;
+    margin-right:auto;
+    margin-bottom: 5px;
+}
+.container1{
+    margin-left:auto;
+    margin-right: auto;
+    width:38rem;
+    border:none;
+    text-align:left;
+    margin-bottom:15px;
+}
+
+#email{
+    display:flex;
+    height:4rem;
+    padding:1rem;
+    color:lightgray;
+    font-size: larger;
+    border:0.33rem solid rgba(0,0,0,.1);
+    border-radius: 2rem;
+    margin-left: auto;
+    margin-right:auto;
+    margin-top:15px;
+    margin-bottom:20px;
+}
+
+#password{
+    display:flex;
+    height:4rem;
+    padding:1rem;
+    color:lightgray;
+    font-size: larger;
+    border:0.33rem solid rgba(0,0,0,.1);
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    margin-left: auto;
+    margin-right:auto;
+}
+#confpswrd{
+    display:flex;
+    height:4rem;
+    padding:1rem;
+    color:lightgray;
+    font-size: larger;
+    border:0.33rem solid rgba(0,0,0,.1);
+    border-bottom-right-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    margin-left: auto;
+    margin-right:auto;
+    margin-bottom:20px;
+}
+
+/*Input Address Info*/
+#input-address-first{
+    display:inline-block;
+    height:4rem;
+    padding:1rem;
+    color:lightgray;
+    font-size: larger;
+    border:0.33rem solid rgba(0,0,0,.1);
+    margin-left: auto;
+    margin-right:auto;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+}
+#input-address{
+    display:inline-block;
+    height:4rem;
+    padding:1rem;
+    color:lightgray;
+    font-size: larger;
+    border:0.33rem solid rgba(0,0,0,.1);
+    margin-left: auto;
+    margin-right:auto;
+}
+#input-address-last{
+    display:inline-block;
+    height:4rem;
+    padding:1rem;
+    color:lightgray;
+    font-size: larger;
+    border:0.33rem solid rgba(0,0,0,.1);
+    margin-left: auto;
+    margin-right:auto;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+}
+
+.container2{
+    margin-left:auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    max-width:38rem;
+    border:none;
+    text-align:left;
+    color:grey;
+}
+
+.container3{
+    margin-left:auto;
+    margin-right: auto;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    max-width:38rem;
+    border:none;
+    text-align:left;
+    color:grey;
+}
+
+.create{
+    background:-webkit-linear-gradient(to right,#585555, #424140);
+    background: linear-gradient(to right,#585555, #424140);
+    color:white;
+    border:none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 130px;
+    padding-right: 130px;
+    font-size:15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 2rem;
+    margin-bottom:5px;
+}
+
+.reset{
+    background:-webkit-linear-gradient(to right,#585555, #424140);
+    background: linear-gradient(to right,#585555, #424140);
+    color:white;
+    border:none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 142px;
+    padding-right: 142px;
+    font-size:15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 2rem;
+    margin-bottom:5px;
+}
+button:hover{
+    opacity:0.8;
+}
+
+.AHAtext{
+    color:rgb(17, 17, 17);
+}
+
+a:hover{
+    color:teal;
+}

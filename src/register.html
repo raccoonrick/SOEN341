@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Soenify</title>
+   <link rel="icon" href="#" type="image/icon type">
+    <!----CSS and Bootstrap style---->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/e6f61e0e67.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+    crossorigin="anonymous">
+    <link rel =  "stylesheet" href = "../css/login.css">
+    <link rel =  "stylesheet" href = "../css/register.css">
+
+</head>
+<body>
+                    <div class="flexboxParent">
+                        <!---Main title-->
+                        <div class="form-control" id="maintitle"><b><h4>Register Now</h4></b></div>
+                        <!--The form to fill out-->
+                        <form action="" class="formbox">
+                            <div class="box-1"> <!---Names input-->
+                                <input type="text" class="form-control" id="FNtext" placeholder="First name*" required>
+                                <input type="text" class="form-control" id="LNtext" placeholder="Last name*" required>
+                                <div class=container1><h5>*Mandatory field</h5></div>
+                                <hr style="width:94%">
+                            </div>
+                    
+                            <div class="box-2"> <!--Email and Password field-->
+                                <input type="text" class="form-control" id="email" type="email" name="Email" placeholder="Email*" size="40" required>
+                                <input type="text" class="form-control" id="password" type="password" name="Password" placeholder="Password*" size="40" required>
+                                <input type="text" class="form-control" id="confpswrd" type="password" placeholder="Confirm Password*" required>
+                            </div>
+                    
+                            <div class="box-3"> <!--Address signup-->
+                                <input type="text" class="form-control" id="input-address-first" type="address" name="address" placeholder="Address Number" required>
+                                <input type="text" class="form-control" id="input-address" placeholder="City" required>
+                                <input type="text" class="form-control" id="input-address" placeholder="Province/State" required>
+                                <input type="text" class="form-control" id="input-address" placeholder="Country" required>
+                                <input type="text" class="form-control" id="input-address-last" placeholder="Postal Code" required>
+                            </div>
+                            &nbsp;&nbsp;&nbsp;
+                            <div class="container2">
+                                <div class="box-2-3"> <!---Newsletter-->
+                                    <h5>Would you like to sign up for our newsletter?</h5>
+                                </div>
+                                <div class="box-check-3"> <!--Confirm newsletter-->
+                                    <label class="newscheckbx"><input type="checkbox" checked="checked" class="chbox1">I want to recieve special offers and promotions, and other services</label>
+                                </div>
+                            </div>
+                        
+                            <hr style="width:94%"> <!--Line to seperate-->
+                    
+                            <div class="container3"> <!---2nd text container-->
+                                <h5>Consent to conditions of Use and Protection</h5>
+                                <label class="newscheckbx"><input type="checkbox" checked="checked" class="chbox2">I accept that I have read the <span style="color:rgb(57, 57, 58);font-weight:bold">Conditions of Use and terms of Protection of Personal Information policies</span></label>
+                            </div>
+                           
+                            <button type="submit" class="create" value="Submit Form" name="create-acc-btn">CREATE ACCOUNT</button> <!--Submit Account Button-->
+                            <button type="reset" class="reset" value="Reset Form" name="reset-acc-btn">CLEAR FORM</button>
+                            
+                            <div class="AHAtext"> <!--Already Have an Account Link-->
+                                <h5>Already have an account? <a href="login.html" class="SIbutton"><span style="text-decoration:underline";>Sign in</span></a></h5>
+                            </div>    
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
