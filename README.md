@@ -57,3 +57,12 @@ Back-End Languages
 * JavaScript
 * MySQL
 * PHP
+
+## Instructions On Running the Website
+* Install either XAMPP (https://www.apachefriends.org/index.html) or MAMP (https://www.mamp.info/en/windows/) in order to run a server to open PHP files.
+* Install the MySQL installer (https://dev.mysql.com/downloads/installer/) in order to run the MySQL server.
+* Export the necessary tables from the db folder into your MySQL server.
+* In the config.php file, edit the credentials to be able to connect to the MySQL server.
+* Run both the XAMPP/MAMP server and the MySQL server.
+* On your XAMPP/MAMP server, configure the directory to be the folder with the source code.
+* Open any browser and type in localhost or localhost/index.php in the searchbar to run the website.
