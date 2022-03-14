@@ -1,30 +1,31 @@
 <?php include "../header.php";?>
 <link rel="stylesheet" href="../css/style.css" />
-    <div class="card-wrapper">
+
+  <div class="card-wrapper">
       <div class="card">
         <!-- card left -->
         <div class="product-imgs">
           <div class="img-display">
             <div class="img-showcase">
-              <img src="../img/Printer1.jpg" alt="Printer image" />
-              <img src="../img/Printer2.jpg" alt="Printer  image" />
-              <img src="../img/Printer3.jpg" alt="Printer  image" />
+              <img class="product-img" src="../img/Printer1.jpg" alt="Printer image" />
+              <img class="product-img" src="../img/Printer2.jpg" alt="Printer  image" />
+              <img class="product-img" src="../img/Printer3.jpg" alt="Printer  image" />
             </div>
           </div>
           <div class="img-select">
             <div class="img-item">
               <a href="#" data-id="1">
-                <img src="../img/Printer1.jpg" alt="Printer  image" />
+                <img class="product-img" src="../img/Printer1.jpg" alt="Printer  image" />
               </a>
             </div>
             <div class="img-item">
               <a href="#" data-id="2">
-                <img src="../img/Printer2.jpg " alt="Printer image" />
+                <img class="product-img" src="../img/Printer2.jpg" alt="Printer image" />
               </a>
             </div>
             <div class="img-item">
               <a href="#" data-id="3">
-                <img src="../img/Printer3.jpg" alt="Printer image" />
+                <img class="product-img" src="../img/Printer3.jpg" alt="Printer image" />
               </a>
             </div>
           </div>
@@ -44,22 +45,25 @@
 
           <div class="product-price">
             <p class="last-price">Old Price: <span>$124.99</span></p>
-            <p class="new-price">New Price: <span>$116.99</span></p>
+            <p class="new-price">New Price: <span class="price">$116.99</span></p>
           </div>
 
-          <div class="product-detail">
-            <h2>About this item:</h2>
-            <p>All in one printer</p>
-            <p>Wireless and simple setup with the HP app</p>
-            <ul>
-              <li>Available: <span>in stock</span></li>
-              <li>Category: <span>Electronics</span></li>
-            </ul>
+          <div class="accordian">
+              <button class = "btn btn-outline-secondary" onclick="displayText()" for= "title1"> More Description</button>
+                    <p id="description-text" style="display:none;"> <br/>
+            All in one printer
+            <br>
+            Wireless and simple setup with the HP app
+            <br>
+              Available: <span>in stock</span><br>
+             Category: <span> <a href="electronics.html">Electronics</a></span>
+            
+            </p>
           </div>
 
           <div class="purchase-info">
             <input type="number" min="0" value="1" />
-            <button type="button" class="btn">
+            <button type="button" class="btn add-cart">
               Add to Cart <i class="fas fa-shopping-cart"></i>
             </button>
           </div>

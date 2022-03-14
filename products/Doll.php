@@ -1,30 +1,31 @@
 <?php include "../header.php";?>
 <link rel="stylesheet" href="../css/style.css" />
-    <div class="card-wrapper">
+
+<div class="card-wrapper">
       <div class="card">
         <!-- card left -->
         <div class="product-imgs">
           <div class="img-display">
             <div class="img-showcase">
-              <img src="../img/Doll2.jpg" alt="Doll image" />
-              <img src="../img/Doll2.jpg" alt="Doll  image" />
-              <img src="../img/Doll3.jpg" alt="Doll  image" />
+              <img class="product-img" src="../img/Doll2.jpg" alt="Doll image" />
+              <img class="product-img" src="../img/Doll2.jpg" alt="Doll  image" />
+              <img class="product-img" src="../img/Doll3.jpg" alt="Doll  image" />
             </div>
           </div>
           <div class="img-select">
             <div class="img-item">
               <a href="#" data-id="1">
-                <img src="../img/Doll2.jpg" alt="Doll image" />
+                <img class="product-img" src="../img/Doll2.jpg" alt="Doll image" />
               </a>
             </div>
             <div class="img-item">
               <a href="#" data-id="2">
-                <img src="../img/Doll2.jpg " alt="Doll  image" />
+                <img class="product-img" src="../img/Doll2.jpg " alt="Doll  image" />
               </a>
             </div>
             <div class="img-item">
               <a href="#" data-id="3">
-                <img src="../img/Doll3.jpg" alt="Doll image" />
+                <img class="product-img" src="../img/Doll3.jpg" alt="Doll image" />
               </a>
             </div>
           </div>
@@ -47,14 +48,16 @@
             <p class="new-price">New Price: <span>$2.99</span></p>
           </div>
 
-          <div class="product-detail">
-            <h2>About this item:</h2>
-            <p>For 6+</p>
-            <p>Colour: Blue</p>
-            <ul>
-              <li>Available: <span>in stock</span></li>
-              <li>Category: <span>Toys</span></li>
-            </ul>
+     <div class="accordian">
+              <button class = "btn btn-outline-secondary" onclick="displayText()" for= "title1"> More Description</button>
+                    <p id="description-text" style="display:none;"> <br/>
+            For 6+
+            <br>
+            Colour: Blue
+            <br>
+              Available: <span>in stock</span><br>
+          Category: <span> <a href="toys.html">Toys,Kids & Baby</a></span>
+                    </p>
           </div>
 
           <div class="purchase-info">

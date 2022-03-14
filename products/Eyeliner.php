@@ -1,36 +1,38 @@
 <?php include "../header.php";?>
 <link rel="stylesheet" href="../css/style.css" />
-    <div class="card-wrapper">
+
+<div class="card-wrapper">
       <div class="card">
         <!-- card left -->
+      
         <div class="product-imgs">
           <div class="img-display">
             <div class="img-showcase">
-              <img src="../img/Eyeliner1.jpg" alt="Eyeliner image" />
-              <img src="../img/Eyeliner2.jpg" alt="Eyliner image" />
-              <img src="../img/Eyeliner3.jpg" alt="Eyeliner image" />
-              <img src="../img/Eyeliner4.jpg" alt="Eyeliner image" />
+              <img class="product-img" src="../img/Eyeliner1.jpg" alt="Eyeliner image" />
+              <img class="product-img" src="../img/Eyeliner2.jpg" alt="Eyliner image" />
+              <img class="product-img" src="../img/Eyeliner3.jpg" alt="Eyeliner image" />
+              <img class="product-img" src="../img/Eyeliner4.jpg" alt="Eyeliner image" />
             </div>
           </div>
           <div class="img-select">
             <div class="img-item">
               <a href="#" data-id="1">
-                <img src="../img/Eyeliner1.jpg" alt="Eyeliner image" />
+                <img class="product-img" src="../img/Eyeliner1.jpg" alt="Eyeliner image" />
               </a>
             </div>
             <div class="img-item">
               <a href="#" data-id="2">
-                <img src="../img/Eyeliner2.jpg " alt="Eyeliner image" />
+                <img class="product-img" src="../img/Eyeliner2.jpg " alt="Eyeliner image" />
               </a>
             </div>
             <div class="img-item">
               <a href="#" data-id="3">
-                <img src="../img/Eyeliner3.jpg" alt="Eyeliner image" />
+                <img class="product-img" src="../img/Eyeliner3.jpg" alt="Eyeliner image" />
               </a>
             </div>
             <div class="img-item">
               <a href="#" data-id="4">
-                <img src="../img/Eyeliner4.jpg" alt="Eyeliner image" />
+                <img class="product-img" src="../img/Eyeliner4.jpg" alt="Eyeliner image" />
               </a>
             </div>
           </div>
@@ -53,15 +55,18 @@
             <p class="new-price">New Price: <span>$12.99</span></p>
           </div>
 
-          <div class="product-detail">
-            <h2>About this item:</h2>
-            <p>The limited edition La Casa de Papel</p>
-            <p>Pigmented and Waterproof formula.</p>
-            <ul>
-              <li>Color: <span>Black</span></li>
-              <li>Available: <span>in stock</span></li>
-              <li>Category: <span>Beauty</span></li>
-            </ul>
+             <div class="accordian">
+             <button class = "btn btn-outline-secondary" onclick="displayText()" for= "title1"> More Description</button>
+             <p id="description-text" style="display:none;"> <br/>
+            The limited edition La Casa de Papel
+            <br>
+            Pigmented and Waterproof formula.
+            <br>
+         
+              Color: <span>Black</span><br>
+              Available: <span>in stock</span><br>
+            Category: <span> <a href="makeup.html">Health & Beauty</a></span>
+             </p>
           </div>
 
           <div class="purchase-info">

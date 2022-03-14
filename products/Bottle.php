@@ -1,30 +1,31 @@
 <?php include "../header.php";?>
 <link rel="stylesheet" href="../css/style.css" />
-    <div class="card-wrapper">
+
+<div class="card-wrapper">
       <div class="card">
         <!-- card left -->
         <div class="product-imgs">
           <div class="img-display">
             <div class="img-showcase">
-              <img src="../img/Bottle1.jpg" alt="bottle image" />
-              <img src="../img/Bottle2.jpg" alt="bottle image" />
-              <img src="../img/Bottle3.jpg" alt="bottle image" />
+              <img class="product-img" src="../img/Bottle1.jpg" alt="bottle image" />
+              <img class="product-img" src="../img/Bottle2.jpg" alt="bottle image" />
+              <img class="product-img" src="../img/Bottle3.jpg" alt="bottle image" />
             </div>
           </div>
           <div class="img-select">
             <div class="img-item">
               <a href="#" data-id="1">
-                <img src="../img/Bottle1.jpg" alt="bottle image" />
+                <img class="product-img" src="../img/Bottle1.jpg" alt="bottle image" />
               </a>
             </div>
             <div class="img-item">
               <a href="#" data-id="2">
-                <img src="../img/Bottle2.jpg " alt="bottle image" />
+                <img class="product-img" src="../img/Bottle2.jpg " alt="bottle image" />
               </a>
             </div>
             <div class="img-item">
               <a href="#" data-id="3">
-                <img src="../img/Bottle3.jpg" alt="bottle image" />
+                <img class="product-img" src="../img/Bottle3.jpg" alt="bottle image" />
               </a>
             </div>
           </div>
@@ -46,21 +47,22 @@
             <p class="last-price">Old Price: <span>$14.99</span></p>
             <p class="new-price">New Price: <span>$12.99</span></p>
           </div>
+  <div class="accordian">
+                <button class = "btn btn-outline-secondary" onclick="displayText()" for= "title1"> More Description</button>
+                    <p id="description-text" style="display:none;"> <br/>
+            18oz bottle to stay hydrated and healthy
+<br>
 
-          <div class="product-detail">
-            <h2>About this item:</h2>
-            <p>18oz bottle to stay hydrated and healthy</p>
-
-            <ul>
-              <li>Color: <span>Metallic Pink</span></li>
-              <li>Available: <span>in stock</span></li>
-              <li>Category: <span>Fitness</span></li>
-            </ul>
+              Color: <span>Metallic Pink</span><br>
+              Available: <span>in stock</span><br>
+              Category: <span> <a href="fitness.html">Fitness</a></span>
+            
+            </p>
           </div>
 
-          <div class="purchase-info">
+         <div class="purchase-info">
             <input type="number" min="0" value="1" />
-            <button type="button" class="btn">
+            <button type="button" class="btn add-cart">
               Add to Cart <i class="fas fa-shopping-cart"></i>
             </button>
           </div>
@@ -86,4 +88,4 @@
         </div>
       </div>
     </div>
-    <?php include "../footer.php";?>
+ <?php include "../footer.php";?>

@@ -1,35 +1,36 @@
 <?php include "../header.php";?>
 <link rel="stylesheet" href="../css/style.css" />
-    <div class="card-wrapper">
+
+<div class="card-wrapper">
       <div class="card">
         <!-- card left -->
+      
         <div class="product-imgs">
           <div class="img-display">
             <div class="img-showcase">
               <img class="product-img" src="../img/Lipstick1.jpg" alt="LipStick image" />
-              <img src="../img/Lipstick2.jpg" alt="LipStick image" />
-              <img src="../img/Lipstick3.jpg" alt="LipStick image" />
+              <img class="product-img" src="../img/Lipstick2.jpg" alt="LipStick image" />
+              <img class="product-img" src="../img/Lipstick3.jpg" alt="LipStick image" />
             </div>
           </div>
-          <div class="loupe"></div>
           <div class="img-select">
             <div class="img-item">
               <a href="#" data-id="1">
-                <img src="../img/Lipstick1.jpg" alt="LipStick image" />
+                <img class="product-img" src="../img/Lipstick1.jpg" alt="LipStick image" />
               </a>
             </div>
             <div class="img-item">
               <a href="#" data-id="2">
-                <img src="../img/Lipstick2.jpg " alt="LipStick image" />
+                <img class="product-img" src="../img/Lipstick2.jpg " alt="LipStick image" />
               </a>
             </div>
             <div class="img-item">
               <a href="#" data-id="3">
-                <img src="../img/Lipstick3.jpg" alt="LipStick image" />
+                <img class="product-img" src="../img/Lipstick3.jpg" alt="LipStick image" />
               </a>
             </div>
           </div>
-          <div class="loupe"></div>
+      
         </div>
 
         <!-- card right -->
@@ -50,16 +51,19 @@
             <p class="new-price">New Price: <span class="price">$9.99</span></p>
           </div>
 
-          <div class="product-detail">
-            <h2>About this item:</h2>
-            <p>The most attractive lipstick</p>
-            <p>Made with shea butter. Best for lips hydration</p>
-            <ul>
-              <li>Color: <span>Magenta</span></li>
-              <li>Available: <span>in stock</span></li>
-              <li>Category: <span>Beauty</span></li>
-            </ul>
+     <div class="accordian">
+                <button class = "btn btn-outline-secondary" onclick="displayText()" for= "title1"> More Description</button>
+                    <p id="description-text" style="display:none;"> <br/>
+            The most attractive lipstick
+            <br>
+            Made with shea butter. Best for lips hydration
+            <br>
+              Color: <span>Magenta</span><br>
+              Available: <span>in stock</span><br>
+          Category: <span> <a href="makeup.html">Health & Beauty</a></span>
+            </p>
           </div>
+          
 
           <div class="purchase-info">
             <input type="number" min="0" value="1" />
@@ -89,4 +93,4 @@
         </div>
       </div>
     </div>
-    <?php include "../footer.php";?>
+     <?php include "../footer.php";?>
