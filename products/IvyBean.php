@@ -1,5 +1,14 @@
 <?php include "../header.php";?>
 <link rel="stylesheet" href="../css/style.css" />
+<?php 
+
+//Info for products
+$itemid = 17;
+//Add to cart functionality
+include "../addtocart.php";
+
+?>
+
 
 <div class="card-wrapper">
       <div class="card">
@@ -62,10 +71,12 @@
           </div>
 
           <div class="purchase-info">
-            <input type="number" min="0" value="1" />
-            <button type="button" class="btn">
-              Add to Cart <i class="fas fa-shopping-cart"></i>
-            </button>
+            <form action="IvyBean.php" method="post" enctype="multipart/form-data">
+              <input type="number" name="quantity" min="0" value="1" />
+              <button type="submit" class="btn add-cart">
+              Add to Cart<i class="fas fa-shopping-cart"></i>
+              </button>
+            </form>
           </div>
 
           <div class="social-links">

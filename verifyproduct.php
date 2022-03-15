@@ -103,6 +103,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 /* store result */
                 mysqli_stmt_store_result($stmt);
                 
+                //Check if product already exists
                 if(mysqli_stmt_num_rows($stmt) == 1){
                     $errmsg = $errmsg . "This product already exists<br>";
                 } else{
@@ -130,7 +131,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 echo "SUCCESS";
             }
             else{
-                $errmsg = "There was a problem connecting with the database.";
+                $errmsg = "This product already exists.<br>";
+                unlink($target_file);
             }
             mysqli_close($stmt);
         }

@@ -77,7 +77,7 @@ session_start();
 
                             ?>
                             <li class="nav-item">
-                                <a class="nav-link" href="cart.html"><i class="fa fa-shopping-cart"></i>Cart</a>
+                                <a class="nav-link" href="../pagenotfound.php"><i class="fa fa-shopping-cart"></i>Cart</a>
                             </li> -->
                         </ul>
                     </div>
