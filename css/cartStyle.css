@@ -246,6 +246,8 @@ aside {
 }
 
 .summary {
+  float: right;
+  right: 100px;
   background-color: #eee;
   border: 1px solid #aaa;
   padding: 1rem;
