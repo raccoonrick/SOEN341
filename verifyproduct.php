@@ -136,6 +136,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             }
             mysqli_close($stmt);
         }
+        $stmt = $link->prepare("SELECT id FROM products WHERE product_name = ?");
+        $stmt->bind_param("i",$name);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if ($result->num_rows > 0) {
+          while($row = $result->fetch_assoc()) {
+            $id = $row["id"];
+          }
+        }
+        mysqli_stmt_close($stmt);
         mysqli_close($link);
     }
 
@@ -146,6 +156,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         $txt = '<?php include "../header.php";?>
         <link rel="stylesheet" href="../css/style.css" />
+        <?php 
+
+        //Info for products
+        $itemid = ' . $id . ';
+        //Add to cart functionality
+        include "../addtocart.php";
+
+        ?>
         
             <div class="card-wrapper">
               <div class="card">
@@ -188,23 +206,23 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                   $txt = $txt .'
                   </div>
         
-                  <div class="product-detail">
-                    <h2>About this item:</h2><p>'.
-                    $product_info
-                    .'</p>
+                  <div class="accordian">
+                    <button class = "btn btn-outline-secondary" onclick="displayText()" for= "title1"> More Description</button>
+                          <p id="description-text" style="display:none;"> <br/>
+                          ' . $product_info . '
+                    Available: <span>in stock</span><br>
+                    Category: <span> ' . $product_category . '</span>
+                  
+                  </p>
+                </div>
                     
-        
-                    <ul>
-                      <li>Available: <span>in stock</span></li>
-                      <li>Category: <span>' . $product_category .'</span></li>
-                    </ul>
-                  </div>
-        
                   <div class="purchase-info">
-                    <input type="number" min="0" value="1" />
-                    <button type="button" class="btn">
-                      Add to Cart <i class="fas fa-shopping-cart"></i>
-                    </button>
+                    <form action="' . $param_link . '" method="post" enctype="multipart/form-data">
+                      <input type="number" name="quantity" min="0" value="1" />
+                      <button type="submit" class="btn add-cart">
+                      Add to Cart<i class="fas fa-shopping-cart"></i>
+                      </button>
+                    </form>
                   </div>
         
                   <div class="social-links">
