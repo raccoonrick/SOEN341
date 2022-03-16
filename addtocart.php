@@ -16,8 +16,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       
       //Connect to sql server
       //-------------TEST-------------
-      // $sql = "SELECT itemquantity FROM cart WHERE userid = ". $userid . "AND itemid = " . $itemid;
-      // $sql = "SELECT itemquantity FROM cart WHERE userid = 4 AND itemid = 7";
       $stmt = $link->prepare("SELECT itemquantity FROM cart WHERE userid = ? AND itemid = ?");
       $stmt->bind_param("ii",$userid,$itemid);
   
@@ -36,23 +34,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   
       //-------------TEST-------------
   
-      // $sql = "SELECT itemquantity FROM cart WHERE userid = ? AND itemid = ?";
-      // if($stmt = mysqli_prepare($link, $sql)){
-      //   mysqli_stmt_bind_param($stmt, "ii", $userid,$itemid);
-      //   if(mysqli_stmt_execute($stmt)){
-      //     mysqli_stmt_store_result($stmt);
-      //     //Check if item exists
-      //     if(mysqli_stmt_num_rows($stmt) == 1){
-      //       //Alter value of quantity in cart table
-      //       mysqli_stmt_bind_result($stmt, $oldqty);
-      //       $oldqty = $oldqty;
-      //       echo '<script>alert("Old Quantity: '.$oldqty.'")</script>';
-      //       $productexists = true;
-      //     }
-      //   }
-      // }
-      // mysqli_stmt_close($stmt);
-      // // echo '<script>alert("Yo.")</script>';
   
       // //Either add to table or update value in table
       if($productexists){
@@ -74,7 +55,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         if($stmt = mysqli_prepare($link, $sql)){
           mysqli_stmt_bind_param($stmt,"iii",$userid,$itemid,$quantity);
           if(mysqli_stmt_execute($stmt)){
-            echo '<script>alert("Added '.$quantity.' items to the cart.")</script>';
+            echo '<script>alert("Added '.$quantity.' item(s) to the cart.")</script>';
           }
           else{
             echo '<script>alert("Something went wrong. Please try again later.")</script>';
