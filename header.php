@@ -19,7 +19,9 @@ session_start();
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
     crossorigin="anonymous">
     <link rel =  "stylesheet" href = "../css/headernfooter.css">
+    <link rel =  "stylesheet" href = "../css/categories.css">
     <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script> 
    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     </head>
 
@@ -77,8 +79,8 @@ session_start();
 
                             ?>
                             <li class="nav-item">
-                                <a class="nav-link" href="../pagenotfound.php"><i class="fa fa-shopping-cart"></i>Cart</a>
-                            </li> -->
+                                <a class="nav-link" href="../cart.php"><i class="fa fa-shopping-cart"></i>Cart</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
