@@ -6,7 +6,7 @@ $sql = "SELECT * FROM products WHERE product_category='Electronics'";
 ?>
 <link rel =  "stylesheet" href = "../css/subcat.css">
     <link rel =  "stylesheet" href = "../css/headernfooter.css">
-    <link rel="stylesheet" href="/css/cartStyle.css">
+    <!-- <link rel="stylesheet" href="/css/cartStyle.css"> -->
      <!--ICONS-->
    <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
