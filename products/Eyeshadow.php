@@ -1,5 +1,6 @@
 <?php include "../header.php";?>
 <link rel="stylesheet" href="../css/style.css" />
+ <script type="text/javascript" src="../js/products.js"></script>
 <?php 
 
 //Info for products
@@ -63,7 +64,7 @@ include "../addtocart.php";
               The multicolor palette. Pigmented and a versatile color selection
             <br>
               Available: <span>in stock</span><br>
-             Category: <span> <a href="makeup.html">Health & Beauty</a></span>
+             Category: <span> <a href="../categories/makeup.php">Health & Beauty</a></span>
             </p>
           </div>
 

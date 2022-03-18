@@ -1,5 +1,6 @@
 <?php include "../header.php";?>
 <link rel="stylesheet" href="../css/style.css" />
+ <script type="text/javascript" src="../js/products.js"></script>
 <?php 
 
 //Info for products
@@ -64,7 +65,7 @@ include "../addtocart.php";
             Wireless and simple setup with the HP app
             <br>
               Available: <span>in stock</span><br>
-             Category: <span> <a href="electronics.html">Electronics</a></span>
+             Category: <span> <a href="../categories/electronics.php">Electronics</a></span>
             
             </p>
           </div>

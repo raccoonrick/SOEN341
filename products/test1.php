@@ -1,5 +1,6 @@
 <?php include "../header.php";?>
         <link rel="stylesheet" href="../css/style.css" />
+         <script type="text/javascript" src="../js/products.js"></script>
         
             <div class="card-wrapper">
               <div class="card">

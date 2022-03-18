@@ -1,5 +1,6 @@
 <?php include "../header.php";?>
 <link rel="stylesheet" href="../css/style.css" />
+ <script type="text/javascript" src="../js/products.js"></script>
 <?php 
 
 //Info for products
@@ -60,7 +61,7 @@ include "../addtocart.php";
             A thriller story
             <br>
               Available: <span>in stock</span><br>
-               Category: <span> <a href="books.html">Books</a></span>
+               Category: <span> <a href="../categories/books.php">Books</a></span>
             
             </p>
           </div>

@@ -1,5 +1,6 @@
 <?php include "../header.php";?>
 <link rel="stylesheet" href="../css/style.css" />
+ <script type="text/javascript" src="../js/products.js"></script>
 <?php 
 
 //Info for products
@@ -63,7 +64,7 @@ include "../addtocart.php";
           82 inch
         <br>
               Available: <span>in stock</span></br>
-              Category: <span> <a href="electronics.html">Electronics</a></span>
+              Category: <span> <a href="../categories/electronics.php">Electronics</a></span>
                     </p>
           </div>
 

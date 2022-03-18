@@ -1,5 +1,6 @@
 <?php include "../header.php";?>
 <link rel="stylesheet" href="../css/style.css" />
+ <script type="text/javascript" src="../js/products.js"></script>
 <?php 
 
 //Info for products
@@ -63,7 +64,7 @@ include "../addtocart.php";
 <br>
               Color: <span>Black</span><br>
               Available: <span>in stock</span><br>
-             Category: <span> <a href="fitness.html">Fitness</a></span>
+             Category: <span> <a href="../categories/fitness.php">Fitness</a></span>
             </p>
           </div>
 

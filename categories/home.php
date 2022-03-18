@@ -33,14 +33,8 @@ $sql = "SELECT * FROM products WHERE product_category='Home Goods'";
                 echo "<div class='product-grid'>";
                 echo "<div class='product-image'>";
                 echo "<a href='../products/" . $row["product_link"] . "'class='image'>";
-                if(sizeof($images < 2)){
-                    echo "<img class='pic-1' src='../img/" . $images[0] . "'>";
+                echo "<img class='pic-1' src='../img/" . $images[0] . "'>";
                     echo "<img class='pic-2' src='../img/" . $images[0] . "'>";
-                }
-                else{
-                    echo "<img class='pic-1' src='../img/" . $images[0] . "'>";
-                    echo "<img class='pic-2' src='../img/" . $images[1] . "'>";
-                }
                 echo "</a>";
                 echo "<a href='' class='product-like-icon'><i class='far fa-heart'></i></a>";
                 echo "<ul class='product-links'>";

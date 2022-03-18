@@ -1,5 +1,6 @@
 <?php include "../header.php";?>
 <link rel="stylesheet" href="../css/style.css" />
+ <script type="text/javascript" src="../js/products.js"></script>
 <?php 
 
 //Info for products
@@ -66,7 +67,7 @@ include "../addtocart.php";
             Lego MINECRAFT 74 pieces
             <br>
               Available: <span>in stock</span><br>
-            Category: <span> <a href="toys.html">Toys,Kids & Baby</a></span>
+            Category: <span> <a href="../categories/toys.php">Toys,Kids & Baby</a></span>
                     </p>
           </div>
 

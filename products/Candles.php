@@ -1,5 +1,6 @@
 <?php include "../header.php";?>
 <link rel="stylesheet" href="../css/style.css" />
+ <script type="text/javascript" src="../js/products.js"></script>
 <?php 
 
 //Info for products
@@ -67,7 +68,7 @@ include "../addtocart.php";
             100% cotton wick
             <br>
               Available: <span>in stock</span><br>
-              Category: <span> <a href="home.html">Home Goods</a></span>
+              Category: <span> <a href="../categories/home.php">Home Goods</a></span>
                     </p>
           </div>
 
