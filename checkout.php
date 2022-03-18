@@ -1,5 +1,5 @@
-<?php include "../header.php";?>
-    <link rel = "stylesheet" href="../css/checkout.css">
+<?php include "header.php";?>
+    <link rel = "stylesheet" href="css/checkout.css">
      <!--ICONS-->
    <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script> 
@@ -8,7 +8,7 @@
    <div class="row">
     <div class="col-75">
       <div class="container">
-        <form action="/action_page.php">
+        <form action="/addorder.php">
         
           <div class="row">
             <div class="col-50">
@@ -65,11 +65,12 @@
           <label>
             <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
           </label>
-        </form>
+        
       </div>
        <br/>
         <input type="submit" value="Place order" class="btn">
     </div>
+    </form>
 </div>
   
-<?php include "../footer.php";?>
+<?php include "footer.php";?>
