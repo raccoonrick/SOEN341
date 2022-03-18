@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -73,6 +75,7 @@ session_start();
                                 echo "<div class=\"dropdown-content\">";
                                 echo "<a href=\"#\">My Account</a>";
                                 echo "<a href=\"#\">Wish List</a>";
+                                echo "<a href =\"../orderReview.php\">Order History </a>";
                                 echo "<a href=\"../logout.php\">Sign Out</a>";
                                 echo "</div></div></li>";
                             }
