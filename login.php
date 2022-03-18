@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
   header("Location: index.php");
   // echo "<script>history.back();</script>";
@@ -44,7 +46,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             if(mysqli_stmt_fetch($stmt)){
                 if(password_verify($password, $hashed_password)){
                     // Password is correct, so start a new session
-                    session_start();
+                    if (session_status() === PHP_SESSION_NONE) {
+                        session_start();
+                    }
                     
                     // Store data in session variables
                     $_SESSION["loggedin"] = true;
