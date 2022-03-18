@@ -1,5 +1,5 @@
-<?php include "../header.php";?>
-    <link rel = "stylesheet" href="../css/order.css">
+<?php include "header.php";?>
+    <link rel = "stylesheet" href="css/order.css">
 
    <div class="container">
        <div class="row">
@@ -90,6 +90,51 @@
                                        </div>
                                    </div>
                                </div>
+                               
+                           </div>
+                           <div class="bg-white card mb-4 order-list shadow-sm">
+                               <div class="gold-members p-4">
+                                   <a href="#">
+                                   </a>
+                                   <div class="media">
+                                       <a href="#">
+                                           <img class="mr-4" src="../img/Bottle1.jpg" alt="Generic placeholder image">
+                                       </a>
+                                       <div class="media-body">
+                                           <a href="#">  <?php
+      
+                                             if(isset($_POST['cancel'])) 
+                                               echo'
+                                               <span class="float-right text-info">Order Canceled<i class="icofont-check-circled text-success"></i></span>';
+                                             
+                                               ?>
+                                           </a>
+                                           <h6 class="mb-2">
+                                               <a href="#"></a>
+                                               <a href="#" class="text-black">Under Amour water bottle</a>
+                                           </h6>
+                                           <p class="text-gray mb-1"><i class="icofont-location-arrow"></i> 1290 boul. cote vertu, Saint laurent, QC, H2M 3A9
+                                           </p>
+                                           <p class="text-gray mb-3"><i class="icofont-list"></i> ORDER #199232123 <i class="icofont-clock-time ml-2"></i> Ordered on Wed, Dec 29, 5:30 PM</p>
+                                           <hr>
+                                           
+                                           <div class="float-right">
+                                               <?php
+      
+                                             if(isset($_POST['cancel'])) {
+                                               echo'<a class="btn btn-sm btn-secondary" href="#"><i class="icofont-refresh"></i> Re-Order</a>';
+                                             }
+                                             else
+                                               echo'  <a class="btn btn-sm btn-secondary" href="#"><i class="icofont-refresh"></i> View</a>
+                                               <a class="btn btn-sm btn-secondary" href="./cancel.php"><i class="icofont-refresh"></i> Cancel Order</a>';
+                                             ?>
+                                                
+                                           </div>
+                                           <p class="mb-0 text-black text-primary pt-2"><span class="text-black font-weight-bold"> Total Paid:</span> $12.99
+                                           </p>
+                                       </div>
+                                   </div>
+                               </div>
                            </div>
                        </div>
                    </div>
@@ -98,4 +143,4 @@
        </div>
    </div>
 
-   <?php include "../footer.php";?>
+   <?php include "./footer.php";?>
