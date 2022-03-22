@@ -73,7 +73,9 @@
 </footer>
 <!--End of footer-->
 <!--Link to JS-->
-<script src="../js/cart.js"></script>
+<!--<script src="../js/cart.js"></script>-->
 <script src="../js/script.js"></script>
+<script src="../js/products.js"></script>
+<script src="js/jquery-3.0.0.min.js"></script>
 </body>
 </html>

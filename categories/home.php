@@ -6,7 +6,7 @@ $sql = "SELECT * FROM products WHERE product_category='Home Goods'";
 ?>
 <link rel =  "stylesheet" href = "../css/subcat.css">
     <link rel =  "stylesheet" href = "../css/headernfooter.css">
-    <link rel="stylesheet" href="/css/cartStyle.css">
+    <!-- <link rel="stylesheet" href="/css/cartStyle.css"> -->
      <!--ICONS-->
    <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -16,7 +16,7 @@ $sql = "SELECT * FROM products WHERE product_category='Home Goods'";
     <div class="container-fluid" style=" text-align:center">
         <div class="row">
             <div class="col-lg-12 title">
-                <h3>Home Goods</h3>
+                <h3>Home</h3>
             </div>
         </div>
 <br/>
@@ -33,14 +33,8 @@ $sql = "SELECT * FROM products WHERE product_category='Home Goods'";
                 echo "<div class='product-grid'>";
                 echo "<div class='product-image'>";
                 echo "<a href='../products/" . $row["product_link"] . "'class='image'>";
-                if(sizeof($images < 2)){
-                    echo "<img class='pic-1' src='../img/" . $images[0] . "'>";
+                echo "<img class='pic-1' src='../img/" . $images[0] . "'>";
                     echo "<img class='pic-2' src='../img/" . $images[0] . "'>";
-                }
-                else{
-                    echo "<img class='pic-1' src='../img/" . $images[0] . "'>";
-                    echo "<img class='pic-2' src='../img/" . $images[1] . "'>";
-                }
                 echo "</a>";
                 echo "<a href='' class='product-like-icon'><i class='far fa-heart'></i></a>";
                 echo "<ul class='product-links'>";
@@ -65,4 +59,4 @@ $sql = "SELECT * FROM products WHERE product_category='Home Goods'";
         }
         ?>
     </div>
-<?php include "../footer.php";?>
+    <?php include "../footer.php";?>

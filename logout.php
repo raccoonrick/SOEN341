@@ -10,6 +10,7 @@ session_destroy();
  
 // Redirect to login page
 // header("location: index.php");
-echo "<script>history.back();</script>";
+// echo "<script>history.back();</script>";
+header("Location: index.php");
 exit;
 ?>

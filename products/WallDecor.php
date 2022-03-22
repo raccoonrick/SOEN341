@@ -1,24 +1,34 @@
 <?php include "../header.php";?>
 <link rel="stylesheet" href="../css/style.css" />
-    <div class="card-wrapper">
+ <script type="text/javascript" src="../js/products.js"></script>
+<?php 
+
+//Info for products
+$itemid = 14;
+//Add to cart functionality
+include "../addtocart.php";
+
+?>
+
+<div class="card-wrapper">
       <div class="card">
         <!-- card left -->
         <div class="product-imgs">
           <div class="img-display">
             <div class="img-showcase">
-              <img src="../img/Walldecor1.jpeg" alt="WallDecor image" />
-              <img src="../img/Walldecor2.jpeg" alt="WallDecor  image" />
+              <img class="product-img" src="../img/Walldecor1.jpeg" alt="WallDecor image" />
+              <img class="product-img" src="../img/Walldecor2.jpeg" alt="WallDecor  image" />
             </div>
           </div>
           <div class="img-select">
             <div class="img-item">
               <a href="#" data-id="1">
-                <img src="../img/Walldecor1.jpeg" alt="WallDecor  image" />
+                <img class="product-img" src="../img/Walldecor1.jpeg" alt="WallDecor  image" />
               </a>
             </div>
             <div class="img-item">
               <a href="#" data-id="2">
-                <img src="../img/Walldecor2.jpeg " alt="WallDecor  image" />
+                <img class="product-img" src="../img/Walldecor2.jpeg " alt="WallDecor  image" />
               </a>
             </div>
           </div>
@@ -38,24 +48,26 @@
 
           <div class="product-price">
             <p class="last-price">Old Price: <span>$34.99</span></p>
-            <p class="new-price">New Price: <span>$20.99</span></p>
+            <p class="new-price">New Price: <span class="price">$20.99</span></p>
           </div>
 
-          <div class="product-detail">
-            <h2>About this item:</h2>
-            <p>Size: 24 x 18</p>
-
-            <ul>
-              <li>Available: <span>in stock</span></li>
-              <li>Category: <span>Home Goods</span></li>
-            </ul>
+               <div class="accordian">
+              <button class = "btn btn-outline-secondary" onclick="displayText()" for= "title1"> More Description</button>
+                    <p id="description-text" style="display:none;"> <br/>
+            Size: 24 x 18
+            <br>
+             Available: <span>in stock</span><br>
+              Category: <span> <a href="../categories/home.php">Home Goods</a></span>
+                    </p>
           </div>
 
           <div class="purchase-info">
-            <input type="number" min="0" value="1" />
-            <button type="button" class="btn">
-              Add to Cart <i class="fas fa-shopping-cart"></i>
-            </button>
+            <form action="WallDecor.php" method="post" enctype="multipart/form-data">
+              <input type="number" name="quantity" min="0" value="1" />
+              <button type="submit" class="btn add-cart">
+              Add to Cart<i class="fas fa-shopping-cart"></i>
+              </button>
+            </form>
           </div>
 
           <div class="social-links">
@@ -79,4 +91,4 @@
         </div>
       </div>
     </div>
-    <?php include "../footer.php";?>
+      <?php include "../footer.php";?>

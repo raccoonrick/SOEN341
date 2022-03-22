@@ -1,30 +1,40 @@
 <?php include "../header.php";?>
 <link rel="stylesheet" href="../css/style.css" />
-    <div class="card-wrapper">
+ <script type="text/javascript" src="../js/products.js"></script>
+<?php 
+
+//Info for products
+$itemid = 13;
+//Add to cart functionality
+include "../addtocart.php";
+
+?>
+
+<div class="card-wrapper">
       <div class="card">
         <!-- card left -->
         <div class="product-imgs">
           <div class="img-display">
             <div class="img-showcase">
-              <img src="../img/Blanket1.jpeg" alt="Blanket image" />
-              <img src="../img/Blanket2.jpeg" alt="Blanket  image" />
-              <img src="../img/Blanket3.jpeg" alt="Blanket  image" />
+              <img class="product-img" src="../img/Blanket1.jpeg" alt="Blanket image" />
+              <img class="product-img" src="../img/Blanket2.jpeg" alt="Blanket image" />
+              <img class="product-img" src="../img/Blanket3.jpeg" alt="Blanket image" />
             </div>
           </div>
           <div class="img-select">
             <div class="img-item">
               <a href="#" data-id="1">
-                <img src="../img/Blanket1.jpeg" alt="Blanket  image" />
+                <img class="product-img" src="../img/Blanket1.jpeg" alt="Blanket image" />
               </a>
             </div>
             <div class="img-item">
               <a href="#" data-id="2">
-                <img src="../img/Blanket2.jpeg " alt="Blanket  image" />
+                <img class="product-img" src="../img/Blanket2.jpeg" alt="Blanket image" />
               </a>
             </div>
             <div class="img-item">
               <a href="#" data-id="3">
-                <img src="../img/Blanket3.jpeg" alt="Blanket image" />
+                <img class="product-img" src="../img/Blanket3.jpeg" alt="Blanket image" />
               </a>
             </div>
           </div>
@@ -47,22 +57,27 @@
             <p class="new-price">New Price: <span>$20.99</span></p>
           </div>
 
-          <div class="product-detail">
-            <h2>About this item:</h2>
-            <p>Available size: Queen & King</p>
-            <p>Washable with machine</p>
-            <p>100% polyester</p>
-            <ul>
-              <li>Available: <span>in stock</span></li>
-              <li>Category: <span>Home Goods</span></li>
-            </ul>
+         <div class="accordian">
+              <button class = "btn btn-outline-secondary" onclick="displayText()" for= "title1"> More Description</button>
+                    <p id="description-text" style="display:none;"> <br/>
+            Available size: Queen & King
+            <br>
+            Washable with machine
+            <br>
+            100% polyester
+            <br>
+              Available: <span>in stock</span><br>
+              Category: <span> <a href="../categories/home.php">Home Goods</a></span>
+                    </p>
           </div>
 
           <div class="purchase-info">
-            <input type="number" min="0" value="1">
-            <button type="button" class="btn">
-              Add to Cart <i class="fas fa-shopping-cart"></i>
-            </button>
+            <form action="Blanket.php" method="post" enctype="multipart/form-data">
+              <input type="number" name="quantity" min="0" value="1" />
+              <button type="submit" class="btn add-cart">
+              Add to Cart<i class="fas fa-shopping-cart"></i>
+              </button>
+            </form>
           </div>
 
           <div class="social-links">
@@ -86,4 +101,5 @@
         </div>
       </div>
     </div>
+    
     <?php include "../footer.php";?>
