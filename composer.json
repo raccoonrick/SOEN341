@@ -1,0 +1,9 @@
+{
+    "name": "some/name",
+    "description": "Descriptions",
+    "license": "proprietary",
+
+    "require-dev": {
+        "phpunit/phpunit": "^9"
+    }
+}
