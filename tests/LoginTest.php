@@ -50,4 +50,3 @@ final class LoginTest extends TestCase
 //        $this->assetFalse(fetch_user() > 0);
 //    }
 }
-?>
