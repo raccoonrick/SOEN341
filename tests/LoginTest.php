@@ -4,8 +4,8 @@ declare(strict_types=1);
 namespace UnitTesting\Login;
 
 $root = dirname(__FILE__, 3);
-require_once($root . '/config.php');
-require($root . '/LogIn.php');
+require_once($root . 'config.php');
+require($root . 'login.php');
 
 //Account Used for testing
 define('__TESTUSERNAME__', 'TestUser', true);
