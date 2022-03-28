@@ -8,8 +8,8 @@ require_once($root . 'config.php');
 require($root . 'login.php');
 
 //Account Used for testing
-define('__TESTUSERNAME__', 'TestUser', true);
-define('__TESTPASSWORD__', 'Tr4v!sCI', true);
+define('__TESTUSERNAME__', 'admin', true);
+define('__TESTPASSWORD__', 'admin', true);
 
 use PHPUnit\Framework\TestCase;
 use Website;
@@ -21,7 +21,7 @@ final class LoginTest extends TestCase
     {
         $TestUserLogin = new Website\Login();
         //Wrong Password
-        $TestUserLogin->withInput(__TESTUSERNAME__, 'TravisCI');
+        $TestUserLogin->withInput(__TESTUSERNAME__, 'admine');
         $this->assertEquals(-1, $TestUserLogin->Login());
     }
 
@@ -29,7 +29,7 @@ final class LoginTest extends TestCase
     {
         $TestUserLogin = new Website\Login();
         //Wrong Username
-        $TestUserLogin->withInput('TestUser', __TESTPASSWORD__);
+        $TestUserLogin->withInput('admine', __TESTPASSWORD__);
         $this->assertEquals(-1, $TestUserLogin->Login());
     }
 
