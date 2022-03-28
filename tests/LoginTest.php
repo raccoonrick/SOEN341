@@ -4,8 +4,8 @@ declare(strict_types=1);
 namespace UnitTesting\Login;
 
 $root = dirname(__FILE__, 3);
-require_once($root . '/src/db/DBConfig.php');
-require($root . '/src/pages/LoginPage/LogIn.php');
+require_once($root . '/config.php');
+require($root . '/LogIn.php');
 
 //Account Used for testing
 define('__TESTUSERNAME__', 'TestUser', true);
@@ -50,3 +50,4 @@ final class LoginTest extends TestCase
 //        $this->assetFalse(fetch_user() > 0);
 //    }
 }
+?>
