@@ -29,7 +29,7 @@ final class LoginTest extends TestCase
     {
         $TestUserLogin = new Website\Login();
         //Wrong Username
-        $TestUserLogin->withInput('TestUer', __TESTPASSWORD__);
+        $TestUserLogin->withInput('TestUser', __TESTPASSWORD__);
         $this->assertEquals(-1, $TestUserLogin->Login());
     }
 
