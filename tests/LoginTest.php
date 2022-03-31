@@ -1,20 +1,11 @@
 <?php
-declare(strict_types=1);
+require "login.php";
 
-namespace UnitTesting\Login;
-
-$root = dirname(__FILE__, 3);
-require_once($root . 'config.php');
-require($root . 'login.php');
-
-//Account Used for testing
-define('__TESTUSERNAME__', 'admin', true);
-define('__TESTPASSWORD__', 'admin', true);
 
 use PHPUnit\Framework\TestCase;
 use Website;
 
-final class LoginTest extends TestCase
+class LoginTest extends TestCase
 {
 
     function testLoginWrongPass(): void
@@ -50,3 +41,4 @@ final class LoginTest extends TestCase
 //        $this->assetFalse(fetch_user() > 0);
 //    }
 }
+?>
