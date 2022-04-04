@@ -12,7 +12,7 @@ class LoginTest extends TestCase
     {
         $TestUserLogin = new Website\Login();
         //Wrong Password
-        $TestUserLogin->withInput(__TESTUSERNAME__, 'admine');
+        $TestUserLogin->withInput('admin', 'admine');
         $this->assertEquals(-1, $TestUserLogin->Login());
     }
 
@@ -20,7 +20,7 @@ class LoginTest extends TestCase
     {
         $TestUserLogin = new Website\Login();
         //Wrong Username
-        $TestUserLogin->withInput('admine', __TESTPASSWORD__);
+        $TestUserLogin->withInput('admine', 'admin');
         $this->assertEquals(-1, $TestUserLogin->Login());
     }
 
@@ -28,7 +28,7 @@ class LoginTest extends TestCase
     {
         $TestUserLogin = new Website\Login();
         //Login Success
-        $TestUserLogin->withInput(__TESTUSERNAME__, __TESTPASSWORD__);
+        $TestUserLogin->withInput('admin', 'admin');
         $this->assertTrue($TestUserLogin->Login() > 0);
     }
 
