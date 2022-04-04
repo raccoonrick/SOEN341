@@ -5,6 +5,10 @@ require "login.php";
 use PHPUnit\Framework\TestCase;
 use Website;
 
+//Account Used for testing
+define('__TESTUSERNAME__', 'admin', true);
+define('__TESTPASSWORD__', 'admin', true);
+
 class LoginTest extends TestCase
 {
 
@@ -12,7 +16,7 @@ class LoginTest extends TestCase
     {
         $TestUserLogin = new Website\Login();
         //Wrong Password
-        $TestUserLogin->withInput('admin', 'admine');
+        $TestUserLogin->withInput(__TESTUSERNAME__, 'admine');
         $this->assertEquals(-1, $TestUserLogin->Login());
     }
 
@@ -20,7 +24,7 @@ class LoginTest extends TestCase
     {
         $TestUserLogin = new Website\Login();
         //Wrong Username
-        $TestUserLogin->withInput('admine', 'admin');
+        $TestUserLogin->withInput('admine', __TESTPASSWORD__);
         $this->assertEquals(-1, $TestUserLogin->Login());
     }
 
@@ -28,7 +32,7 @@ class LoginTest extends TestCase
     {
         $TestUserLogin = new Website\Login();
         //Login Success
-        $TestUserLogin->withInput('admin', 'admin');
+        $TestUserLogin->withInput(__TESTUSERNAME__, __TESTPASSWORD__);
         $this->assertTrue($TestUserLogin->Login() > 0);
     }
 
