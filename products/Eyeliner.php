@@ -7,6 +7,7 @@
 $itemid = 6;
 //Add to cart functionality
 include "../addtocart.php";
+include "../reviews.php";
 
 ?>
 
@@ -50,14 +51,7 @@ include "../addtocart.php";
         <div class="product-content">
           <h2 class="product-title">Eyeliner</h2>
           <a href="#" class="product-link">visity Soenify</a>
-          <div class="product-rating">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-            <span>4.7(21)</span>
-          </div>
+          <?php displayStars($num_stars,$num_ratings); ?>
 
           <div class="product-price">
             <p class="last-price">Old Price: <span>14.99</span></p>
@@ -86,6 +80,33 @@ include "../addtocart.php";
               </button>
             </form>
           </div>
+          <?php
+            while($db_review= mysqli_fetch_array($reviews)){
+          ?>
+				<h4><?=$db_review['rating'];?> <i class="fas fa-star" data-rating="2" style="font-size:20px;color:green;"></i> by <span style="font-size:14px;"><?=getUserName($db_review['user_id']);?></span></h4>
+				<p><?=$db_review['comment'];?></p>
+				<hr>
+          <?php	
+            }
+              
+          ?>
+          
+          <?php
+            if(purchasedProduct($itemid)):
+          ?>
+          <!-- Add review and rating -->
+          <div class="purchase-info">
+            <form action="../addreview.php" method="post" enctype="multipart/form-data">
+              <input type="hidden" name="itemid" id="itemid" value=<?php echo $itemid;?>>
+              <input type="number" name ="rating" id="rating" min=1 max=5 value="1" />
+            <textarea class="form-control" rows="3" placeholder="Write your review here..." name="comment" id="comment"required></textarea><br>
+            <p><button type="submit"  class="btn btn-default btn-sm btn-info" id="srr_rating">Submit</button></p>
+            </form>
+            </div>
+            
+        <?php endif;?>
+        
+
 
           <div class="social-links">
             <p>Share At:</p>
