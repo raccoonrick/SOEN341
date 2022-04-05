@@ -1,5 +1,8 @@
 <?php
-session_start();
+//Check if session is started
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+  }
 //Check if user is an admin, redirect to another page if necessary
 if(isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == true){
   echo '<script>alert("Admin Log in")</script>';

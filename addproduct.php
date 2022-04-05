@@ -1,5 +1,9 @@
 <?php include "header.php";
-session_start();
+//Check if session is started
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+}
+//Check if user isn't logged in yet
 if(!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true){
   header("Location: index.php");
   exit;
@@ -21,9 +25,8 @@ if(!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true){
             <div class="row g-0">
               <div class="col-lg-6">
                 <div class="card-body p-md-5 mx-md-4">
-  
+                  <!-- Redirect to verify product page -->
                   <form action="verifyproduct.php" method="post" enctype="multipart/form-data">
-                  <!-- <form action="verifyproduct.php" method="post"> -->
                     <p>Enter Product Information</p>
                     
 
@@ -85,33 +88,5 @@ if(!isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] !== true){
       </div>
     </div>
   </section>
-        <!-- <section style="text-align: center;">
-      
-            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
-          Save
-        </button>
-      
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">NOTE</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-                </div>
-              <div class="modal-body">
-                Are you sure about making these changes?
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-dark" data-dismiss="modal">Save</button>
-              </div>
-            </div>
-          </div>
-        </div>
-          <br>
-    </section> -->
-
 </body>
 </html>

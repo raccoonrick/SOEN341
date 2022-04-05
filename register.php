@@ -2,7 +2,7 @@
 /*
 --------------------REGISTER FILE--------------------------
     For now, to make an admin user, the username just has to have the word
-    admin. Will need to be changed later on.
+    admin.
 */
 // Include config file
 require_once "config.php";

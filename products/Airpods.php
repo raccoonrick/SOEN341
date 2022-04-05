@@ -72,6 +72,7 @@ include "../reviews.php";
             </form>
           </div>
           <?php
+          // Display reviews
             while($db_review= mysqli_fetch_array($reviews)){
           ?>
 				<h4><?=$db_review['rating'];?> <i class="fas fa-star" data-rating="2" style="font-size:20px;color:green;"></i> by <span style="font-size:14px;"><?=getUserName($db_review['user_id']);?></span></h4>

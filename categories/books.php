@@ -1,12 +1,11 @@
 <?php
 include "../header.php";
-// require_once "../config.php";
+// Get products from category
 $sql = "SELECT * FROM products WHERE product_category='Books'";
         $result = $link->query($sql);
 ?>
 <link rel =  "stylesheet" href = "../css/subcat.css">
     <link rel =  "stylesheet" href = "../css/headernfooter.css">
-    <!-- <link rel="stylesheet" href="/css/cartStyle.css"> -->
      <!--ICONS-->
    <script src="https://unpkg.com/boxicons@2.1.1/dist/boxicons.js"></script>
    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -26,6 +25,7 @@ $sql = "SELECT * FROM products WHERE product_category='Books'";
         
 
         if($result->num_rows > 0){
+            // Display each product in category
             while($row = $result->fetch_assoc()){
                 
                 $images = explode("|",$row["product_img"]);

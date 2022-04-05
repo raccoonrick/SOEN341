@@ -1,4 +1,5 @@
 <?php
+// Header page
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }

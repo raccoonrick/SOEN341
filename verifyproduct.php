@@ -1,6 +1,7 @@
 <?php include 'header.php';
 require_once 'config.php';
 if($_SERVER["REQUEST_METHOD"] == "POST"){
+  // Check each input for errors or if left blank
     $product_name=$product_info=$product_category=$errmsg  = '';
     $product_onsale=$product_saleprice=$product_price = 0;
 
@@ -46,7 +47,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     //Verify image
 
     if(empty($errmsg)){
-
+        // Check if file uploaded was of correct file type
         $dir = "img/";
         $product_img = basename($_FILES["product_img"]["name"]);
         $target_file = $dir . basename($_FILES["product_img"]["name"]);
@@ -61,35 +62,29 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $errmsg = $errmsg . "File is not an image.<br>" . $imageFileType . "<br>";
             $uploadOk = 0;
         }
-
+        // Check if file already exists
         if (file_exists($target_file)) {
             $errmsg = $errmsg . "Sorry, file already exists.<br>";
             $uploadOk = 0;
           }
-
+          // Check if format if correct
         if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
             && $imageFileType != "gif" ) {
             $errmsg = $errmsg . "Sorry, only JPG, JPEG, PNG & GIF files are allowed.<br>";
             $uploadOk = 0;
             }
-
+            // Don't upload image if there's an error
         if ($uploadOk == 0){
             $errmsg = $errmsg . "Image not uploaded.<br>";
         }
         else{
             if (move_uploaded_file($_FILES["product_img"]["tmp_name"], $target_file)) {
-                // $errmsg = $errmsg .  "The file ". htmlspecialchars( basename( $_FILES["product_img"]["name"])). " has been uploaded.";
             } else {
                 $errmsg = $errmsg .  "Sorry, there was an error uploading your file.";
             }
         }
     }
-
-    //Attempt to insert into db
-    // if(empty($errmsg)){
-    //     $errmsg = "Everything works prior the db.";
-    // }
-    // $errmsg = "ASDASD";
+    // Insert into db if there's no errors
     if(empty($errmsg)){
         $sql = "SELECT id FROM products WHERE product_name = ?";
 
@@ -112,7 +107,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             }
             mysqli_stmt_close($stmt);
         }
-        
+        // Insert into database
 
         $sql = "INSERT INTO products (product_name, product_info, product_category, product_price, product_onsale, product_saleprice,"
         . "product_img, product_link) VALUES (?,?,?,?,?,?,?,?)";
@@ -274,6 +269,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 
 ?>
+<!-- Display success message -->
  <section class="h-100 gradient-form" style="background-color: #eee;">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
@@ -287,7 +283,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             echo "Product Successfully Added!";
                         }
                         else{
-                            // echo $product_img;
                             echo $errmsg;
                         }
                     ?>

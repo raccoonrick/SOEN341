@@ -1,6 +1,6 @@
 <?php
 include "../header.php";
-// require_once "../config.php";
+// Get products from category
 $sql = "SELECT * FROM products WHERE product_category='Home Goods'";
         $result = $link->query($sql);
 ?>
@@ -27,7 +27,7 @@ $sql = "SELECT * FROM products WHERE product_category='Home Goods'";
 
         if($result->num_rows > 0){
             while($row = $result->fetch_assoc()){
-                
+                // Display each product
                 $images = explode("|",$row["product_img"]);
                 echo "<div class='col-md-3 col-sm-6'>";
                 echo "<div class='product-grid'>";

@@ -1,5 +1,8 @@
 <?php
-session_start();
+//Check if session is started
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+}
 require_once "config.php";
 include "header.php";
 ?>
@@ -13,11 +16,13 @@ include "header.php";
         <a id="aisles"></a>
         <div class="row">
           <?php
+          //Get category names from database
           $sql = "SELECT * FROM categories";
           $result = $link->query($sql);
           
           if($result->num_rows > 0){
               while($row = $result->fetch_assoc()){
+                //Display categories on page
                 echo "<div class='col-lg-4 col-md-6'>";
                 echo "<a href='categories/" . $row["cat_link"] . "'>";
                 echo "<div class='card'>";
@@ -37,12 +42,6 @@ include "header.php";
       </div>
       <br/> 
       <div class="text-center" >
-        <?php
-        // if(isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == true){
-        //   echo "<a href = 'addnewcategory.php' class='btn btn-outline-primary' style='float: left-cent;'>Add New Category</a>";
-        // }
-        ?>
-     <!-- <a href = "../src/addnewcategory.html" class="btn btn-outline-primary" style="float: left-center;">Add new category</a> -->
       </div>
   </body>
   

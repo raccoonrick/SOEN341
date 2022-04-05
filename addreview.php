@@ -3,6 +3,7 @@ include "header.php";
 include "config.php";
 if(isset($_SERVER["REQUEST_METHOD"])){
     if($_SERVER["REQUEST_METHOD"] == "POST"){
+        //Insert review into database
         $comment = $_POST["comment"];
         $itemid = $_POST["itemid"];
         $rating = $_POST["rating"];
@@ -15,6 +16,7 @@ if(isset($_SERVER["REQUEST_METHOD"])){
     }
 $link->close();
 ?>
+<!-- Display review message -->
 <section class="h-100 gradient-form" style="background-color: #eee;">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">

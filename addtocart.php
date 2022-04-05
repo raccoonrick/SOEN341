@@ -7,7 +7,7 @@ function checkValidQuantity($qty){
   else return false;
 }
 
-function checkifInCart($itemid){
+function checkifInCart($itemid,$qty){
   if(isset($_SESSION['cartItems'])){
     for($i = 0; $i < sizeof($_SESSION['cartItems']); $i++){       //MAKE SURE ITEMS DONT APPEAR TWICE IN CART
       if($_SESSION['cartItems'][$i]["itemid"] == $itemid){
@@ -32,7 +32,7 @@ if(isset($_SERVER["REQUEST_METHOD"])){
         $userid = $_SESSION['userid'];
         $qty = $_POST['quantity'];
 
-        $alreadyInCart = checkifInCart($itemid);
+        $alreadyInCart = checkifInCart($itemid,$qty);
       if(!$alreadyInCart){
         //Organize product into array to put into the session variable
         $product = array("qty"=>"$qty","itemid"=>"$itemid");

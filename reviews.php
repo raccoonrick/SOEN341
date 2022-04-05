@@ -63,7 +63,7 @@ function getUserName($userid){
 }
 
 
-//Get total number of ratings
+//Get total number of ratings from db
 $sql_total = $link->prepare("SELECT count(rating) as TOTAL from reviews where product_id = ?");
 $sql_total->bind_param("i",$itemid);
 $sql_total->execute();
@@ -85,7 +85,7 @@ if($num_ratings > 0){
     $sql_result = $sql_stars->get_result();
 
 
-    //Check if there's any reviews
+    //Check if there's any reviews for the product
     if($sql_result->num_rows > 0){
         while($row = $sql_result->fetch_assoc()){
             $num_stars = $row["AVGRATE"];

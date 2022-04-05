@@ -1,3 +1,4 @@
+<!-- Footer page  -->
 <footer>
     <div class="top">
         <div class="container-fluid p-0">

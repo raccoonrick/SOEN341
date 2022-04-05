@@ -1,13 +1,10 @@
 <?php
 include_once "header.php";
+//Check if user is logged in first, else warn user 
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    // header("Location: login.php");
     echo '<script>alert("Please log in first.");</script>';
     die();
 }
-// else{
-//     include "header.php";
-// }
 
 ?>
 <link rel="stylesheet" href="../css/cartStyle.css">
@@ -47,24 +44,21 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
               }
             }
           }
-          
-          // Always do checks and validation
       }
       }
       if(isset($_SESSION["cartItems"])){
         for($i=0; $i < sizeof($_SESSION["cartItems"]); $i++){
           $itemid = $_SESSION["cartItems"][$i]["itemid"];
           $qty = $_SESSION["cartItems"][$i]["qty"];
+          // Get product information from database
           if($qty > 0){
           $prod_info = $link->prepare("SELECT product_name, product_price, product_onsale, product_saleprice, product_img FROM products WHERE id = ?");
           $prod_info->bind_param("i",$itemid);
           $prod_info->execute();
           $prod_result = $prod_info->get_result();
-            // echo "Yo <br>";
             if ($result->num_rows > 0) {
-              // echo "Hello <br>";
               while($row = $prod_result->fetch_assoc()) {
-                // echo " Steven <br>";
+                //Display each product
                 $images = explode("|",$row["product_img"]);
                 if ($row["product_onsale"] == 1){
                   $subtotal = $qty * $row["product_saleprice"];
@@ -106,6 +100,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
         }
       }
       }
+      // Reformat numbers
       $qst = number_format($subtotal_all * 0.09975,2,"."," ");
       $gst = number_format($subtotal_all * 0.05,2,"."," ");
       $link->close();
@@ -158,7 +153,4 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   </main>
    
 
-<!--Link to JS-->
-<!-- <script src="../js/cart.js"></script>
-<script src="../js/jquery-3.0.0.min.js"></script> -->
 <?php include "footer.php";?>

@@ -1,10 +1,11 @@
 <?php
+//Check if session was started
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
+//Check if user is logged in already
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
   header("Location: index.php");
-  // echo "<script>history.back();</script>";
   exit;
 }
 // Include config file
@@ -22,6 +23,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   else{
     $username_err = "Please enter a username.";
   }
+  //Check for empty password
   if(!empty(trim($_POST["password"]))){
     $password = trim($_POST["password"]);
   }
@@ -29,6 +31,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $password_err = "Please enter a password.";
   }
   if(!empty($username) && !empty($password)){
+    //Search the database for existing user
     $sql = "SELECT id, username, pass, is_admin FROM users WHERE username = ?";
 
     if($stmt = mysqli_prepare($link, $sql)){
@@ -63,7 +66,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     }
                     
                     // Redirect user to previous page
-                    // echo "<script>history.back();</script>";
                     header("Location: index.php");
                 } else{
                     // Password is not valid, display a generic error message
@@ -97,7 +99,8 @@ include "header.php";
             <div class="row g-0">
               <div class="col-lg-6">
                 <div class="card-body p-md-5 mx-md-4">
-  
+
+                  <!-- Form links to itself -->
                   <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                     <p>Please login to your account</p>
                     
