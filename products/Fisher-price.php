@@ -1,12 +1,51 @@
 <?php include "../header.php";?>
 <link rel="stylesheet" href="../css/style.css" />
- <script type="text/javascript" src="../js/products.js"></script>
+ <script type="text/javascript" src="products.js"></script>
+  <style>
+.accordion {
+  background-color: #ffffff;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+border:none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ADD8E6;
+}
+
+.accordion:after {
+  content: '\25BC';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+.active:after {
+  content: "\25B2"; /* Unicode character for "minus" sign (-) */
+}
+
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+</style>
 <?php 
 
 //Info for products
 $itemid = 11;
 //Add to cart functionality
 include "../addtocart.php";
+include "../reviews.php";
 
 ?>
 
@@ -43,34 +82,55 @@ include "../addtocart.php";
         <!-- card right -->
         <div class="product-content">
           <h2 class="product-title">The Fisher-price Stack</h2>
-          <a href="#" class="product-link">visity Soenify</a>
-          <div class="product-rating">
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star"></i>
-            <i class="fas fa-star-half-alt"></i>
-            <span>4.7(21)</span>
-          </div>
+          <a href="../index.php" class="product-link">visity Soenify</a>
+          <?php displayStars($num_stars,$num_ratings); ?>
 
           <div class="product-price">
             <p class="last-price">Old Price: <span>$9.99</span></p>
             <p class="new-price">New Price: <span>$5.99</span></p>
           </div>
 
-      <div class="accordian">
-              <button class = "btn btn-outline-secondary" onclick="displayText()" for= "title1"> More Description</button>
-                    <p id="description-text" style="display:none;"> <br/>
-            For 6M+
+       <button class="accordion"><strong>Description</strong></button>
+         <div class="panel">
+    For 6M+
             <br>
             The stack toy
             <br>
               Available: <span>in stock</span><br>
              Category: <span> <a href="../categories/toys.php">Toys,Kids & Baby</a></span>
-                    </p>
-          </div>
+      </div>
 
+       <button class="accordion"><strong>Reviews</strong></button>
+         <div class="panel">
+             <?php
+            while($db_review= mysqli_fetch_array($reviews)){
+          ?>
+				<h5><?=$db_review['rating'];?> <i class="fas fa-star" data-rating="2" style="font-size:14px;color:#50C878;"></i> by <span style="font-size:14px; font-family:Arial"><?=getUserName($db_review['user_id']);?></span></h5>
+				<p><span style="font-size:16px; font-family:Lucida Console"><?=$db_review['comment'];?></span></p>
+				<hr>
+          <?php	
+            }
+              
+          ?>
+          
+          <?php
+            if(purchasedProduct($itemid)):
+          ?>
+          <!-- Add review and rating -->
           <div class="purchase-info">
+            <form action="../addreview.php" method="post" enctype="multipart/form-data">
+              <input type="hidden" name="itemid" id="itemid" value=<?php echo $itemid;?>>
+              <input type="number" name ="rating" id="rating" min=1 max=5 value="1" />
+            <textarea class="form-control" rows="3" placeholder="Write your review here..." name="comment" id="comment"required></textarea><br>
+            <p><button type="submit"  class="btn btn-default btn-sm btn-info" id="srr_rating">Submit</button></p>
+            </form>
+            </div>
+            
+        <?php endif;?>
+      </div>
+
+
+        <div class="purchase-info">
             <form action="Fisher-price.php" method="post" enctype="multipart/form-data">
               <input type="number" name="quantity" min="0" value="1" />
               <button type="submit" class="btn add-cart">
@@ -78,7 +138,7 @@ include "../addtocart.php";
               </button>
             </form>
           </div>
-
+         
           <div class="social-links">
             <p>Share At:</p>
             <a href="#">
@@ -100,4 +160,20 @@ include "../addtocart.php";
         </div>
       </div>
     </div>
+        <script>
+        var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+    </script>
     <?php include "../footer.php";?>
