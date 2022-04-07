@@ -1,58 +1,135 @@
 <?php include "../header.php";?>
         <link rel="stylesheet" href="../css/style.css" />
-         <script type="text/javascript" src="../js/products.js"></script>
+         <script type="text/javascript" src="products.js"></script>
         <?php 
 
         //Info for products
         $itemid = 14;
         //Add to cart functionality
         include "../addtocart.php";
+        include "../reviews.php";
 
         ?>
         
-            <div class="card-wrapper">
-              <div class="card">
-                <!-- card left -->
-                <div class="product-imgs">
-                  <div class="img-display">
-                    <div class="img-showcase">
-                      <img src="../img/test.png" alt="Stock image" />
-                    </div>
-                  </div>
-                  <div class="img-select">
-                    <div class="img-item">
-                      <a href="#" data-id="1">
-                        <img src="../img/test.png" alt="Stack image" />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <!-- card right -->
-                <div class="product-content">
-                  <h2 class="product-title">Testing</h2>
-                  <a href="#" class="product-link">visity Soenify</a>
-                  <div class="product-rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                    <span>4.7(21)</span>
-                  </div>
-                  <div class="product-price"><p class="new-price">Price: <span>$12</span></p>
-                  </div>
+        <style>
+.accordion {
+  background-color: #ffffff;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+border:none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+}
+
+.active, .accordion:hover {
+  background-color: #ADD8E6;
+}
+
+.accordion:after {
+  content: '\25BC';
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+.active:after {
+  content: "\25B2"; /* Unicode character for "minus" sign (-) */
+}
+
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+</style>
         
-                  <div class="accordian">
-                    <button class = "btn btn-outline-secondary" onclick="displayText()" for= "title1"> More Description</button>
-                          <p id="description-text" style="display:none;"> <br/>
-                          asdlkfasldkfh
+  <div class="card-wrapper">
+      <div class="card">
+        <!-- card left -->
+        <div class="product-imgs">
+          <div class="img-display">
+            <div class="img-showcase">
+              <img class="product-img" src="../img/test.jpeg" alt="Printer image" />
+              <img class="product-img" src="../img/test.jpeg" alt="Printer  image" />
+              <img class="product-img" src="../img/test.jpeg" alt="Printer  image" />
+            </div>
+          </div>
+          <div class="img-select">
+            <div class="img-item">
+              <a href="#" data-id="1">
+                <img class="product-img" src="../img/test.jpeg" alt="Printer  image" />
+              </a>
+            </div>
+            <div class="img-item">
+              <a href="#" data-id="2">
+                <img class="product-img" src="../img/test.jpeg" alt="Printer image" />
+              </a>
+            </div>
+            <div class="img-item">
+              <a href="#" data-id="3">
+                <img class="product-img" src="../img/test.jpeg" alt="Printer image" />
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- card right -->
+        <div class="product-content">
+          <h2 class="product-title">Test</h2>
+          <a href="../index.php" class="product-link">visity Soenify</a>
+          <?php displayStars($num_stars,$num_ratings); ?>
+
+          <div class="product-price">
+            <p class="last-price">Old Price: <span>$12.99</span></p>
+            <p class="new-price">New Price: <span class="price">$10.99</span></p>
+          </div>
+       
+      
+   <button class="accordion"><strong>Description</strong></button>
+         <div class="panel">
+        asdlkfasldkfh
                     Available: <span>in stock</span><br>
-                    Category: <span> Electronics</span>
-                  
-                  </p>
-                </div>
-                    
-                  <div class="purchase-info">
+              Category: <span> <a href="../categories/electronics.php">Electronics</a></span>
+      </div>
+   
+   <button class="accordion"><strong>Reviews</strong></button>
+         <div class="panel">
+             <?php
+            while($db_review= mysqli_fetch_array($reviews)){
+          ?>
+				<h5><?=$db_review['rating'];?> <i class="fas fa-star" data-rating="2" style="font-size:14px;color:#50C878;"></i> by <span style="font-size:14px; font-family:Arial"><?=getUserName($db_review['user_id']);?></span></h5>
+				<p><span style="font-size:16px; font-family:Lucida Console"><?=$db_review['comment'];?></span></p>
+				<hr>
+          <?php	
+            }
+              
+          ?>
+          
+          <?php
+            if(purchasedProduct($itemid)):
+          ?>
+          <!-- Add review and rating -->
+          <div class="purchase-info">
+            <form action="../addreview.php" method="post" enctype="multipart/form-data">
+              <input type="hidden" name="itemid" id="itemid" value=<?php echo $itemid;?>>
+              <input type="number" name ="rating" id="rating" min=1 max=5 value="1" />
+            <textarea class="form-control" rows="3" placeholder="Write your review here..." name="comment" id="comment"required></textarea><br>
+            <p><button type="submit"  class="btn btn-default btn-sm btn-info" id="srr_rating">Submit</button></p>
+            </form>
+            </div>
+            
+        <?php endif;?>
+      </div>
+
+
+
+           <div class="purchase-info">
                     <form action="Testing.php" method="post" enctype="multipart/form-data">
                       <input type="number" name="quantity" min="0" value="1" />
                       <button type="submit" class="btn add-cart">
@@ -60,7 +137,7 @@
                       </button>
                     </form>
                   </div>
-        
+                  
                   <div class="social-links">
                     <p>Share At:</p>
                     <a href="#">
@@ -82,4 +159,20 @@
                 </div>
               </div>
             </div>
+                  <script>
+        var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+    </script>
             <?php include "../footer.php";?>
