@@ -16,30 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `users`
+-- Table structure for table `cart`
 --
 
-DROP TABLE IF EXISTS `users`;
+DROP TABLE IF EXISTS `cart`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `users` (
-  `id` int NOT NULL AUTO_INCREMENT,
-  `username` varchar(50) NOT NULL,
-  `pass` varchar(255) NOT NULL,
-  `is_admin` int DEFAULT '0',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `cart` (
+  `userid` int NOT NULL,
+  `itemid` int NOT NULL,
+  `itemquantity` int NOT NULL,
+  KEY `userid` (`userid`),
+  CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`userid`) REFERENCES `users` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `users`
+-- Dumping data for table `cart`
 --
 
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (2,'admin2','$2y$10$KWma7Reuq/3h9Afie.f9EOrz85zyeflX1dhGoyWnQLO5EXdpfPFAa',1),(3,'tester','$2y$10$zOlIgjM0SJNJ0IVYUV7fg.HtSooW82Gqe01qz8E90a/lOGSbmr96i',0),(4,'ricky','$2y$10$boSHV/dLV7uYaqBPWZqmQulz5GWdG9XNuGr.a0icZqnqfgbjfNeti',0),(5,'admin','$2y$10$yMn5/hiQvQ2JbCGyat7DWevTrgWsoTrNkQhNVotIP8wYbr1zEYI4G',1),(6,'12345','$2y$10$fdPUT2LLJowCWNhEd3ETheSBswF2u0G7X2lNGCj25x/Z00wjrSSxq',0),(7,'user1','$2y$10$W9Sp/H.Wkw.z2xBp1RAMU.Y8QyegHE.e3dZsk72pEzo72oCWo7.1m',0),(8,'admin_ricky','$2y$10$CST.f6ii5FzMKHl02yYlgOgYd/4iSoWylY7rsW8mL7iPAxkZ2lYci',1),(9,'test1','$2y$10$58LiEgX/KPh41DTV6N9VjOMaROf2eh5Wfbv3jf3yCQ8mSbDMGYOXC',0);
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+LOCK TABLES `cart` WRITE;
+/*!40000 ALTER TABLE `cart` DISABLE KEYS */;
+INSERT INTO `cart` VALUES (4,7,35),(4,13,1),(4,1,14);
+/*!40000 ALTER TABLE `cart` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

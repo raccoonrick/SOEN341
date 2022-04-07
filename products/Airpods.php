@@ -1,6 +1,14 @@
 <?php include "../header.php";?>
-<link rel="stylesheet" href="../css/style.css" />
+   <link rel="stylesheet" href="../css/style.css">
+ <script type="text/javascript" src="../js/products.js"></script>
+<?php 
 
+//Info for products
+$itemid = 7;
+//Add to cart functionality
+include "../addtocart.php";
+
+?>
 <div class="card-wrapper">
       <div class="card">
         <!-- card left -->
@@ -45,7 +53,7 @@
 
           <div class="product-price">
             <p class="last-price">Old Price: <span>229.99</span></p>
-            <p class="new-price">New Price: <span class="price">$210.99</span></p>
+            <p id='price' class="new-price">New Price: <span class="price">$210.99</span></p>
           </div>
            <div class="accordian">
               <button class = "btn btn-outline-secondary" onclick="displayText()" for= "title1"> More Description</button>
@@ -55,16 +63,18 @@
             Longer battery life and spatial audio
             <br>
               Available: <span>in stock</span><br>
-              Category: <span> <a href="electronics.html">Electronics</a></span>
+              Category: <span> <a href="../categories/electronics.php">Electronics</a></span>
             
             </p>
           </div>
  
           <div class="purchase-info">
-            <input type="number" min="0" value="1" />
-            <button type="button" class="btn add-cart">
-              Add to Cart <i class="fas fa-shopping-cart"></i>
-            </button>
+            <form action="Airpods.php" method="post" enctype="multipart/form-data">
+              <input type="number" name="quantity" min="0" value="1" />
+              <button type="submit" class="btn add-cart">
+              Add to Cart<i class="fas fa-shopping-cart"></i>
+              </button>
+            </form>
           </div>
 
           <div class="social-links">

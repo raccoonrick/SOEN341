@@ -1,7 +1,10 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-  echo "<script>history.back();</script>";
+  header("Location: index.php");
+  // echo "<script>history.back();</script>";
   exit;
 }
 // Include config file
@@ -43,11 +46,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             if(mysqli_stmt_fetch($stmt)){
                 if(password_verify($password, $hashed_password)){
                     // Password is correct, so start a new session
-                    session_start();
+                    if (session_status() === PHP_SESSION_NONE) {
+                        session_start();
+                    }
                     
                     // Store data in session variables
                     $_SESSION["loggedin"] = true;
-                    $_SESSION["id"] = $id;
+                    $_SESSION["userid"] = $id;
                     $_SESSION["username"] = $username;    
 
                     if($is_admin == 1){
@@ -58,7 +63,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     }
                     
                     // Redirect user to previous page
-                    echo "<script>history.back();</script>";
+                    // echo "<script>history.back();</script>";
+                    header("Location: index.php");
                 } else{
                     // Password is not valid, display a generic error message
                     echo "<script>alert('Invalid Login Details. Please Try Again')</script>";
@@ -97,7 +103,7 @@ include "header.php";
                     
 
                     <div class="form-outline mb-4">
-                        <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>" placeholder="email i.e, username@gmail.com">
+                        <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>" placeholder="Username">
                         <span class="invalid-feedback"><?php echo $username_err; ?></span>
                       <label class="form-label" for="form2Example11">Username</label>
                     </div>

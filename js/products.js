@@ -20,6 +20,7 @@ function slideImage() {
   }px)`;
 }
 window.addEventListener("resize", slideImage);
+
 function displayText() {
   var text = document.getElementById("description-text");
   if (text.style.display == "none") {

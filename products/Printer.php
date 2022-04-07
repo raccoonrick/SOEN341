@@ -1,5 +1,14 @@
 <?php include "../header.php";?>
 <link rel="stylesheet" href="../css/style.css" />
+ <script type="text/javascript" src="../js/products.js"></script>
+<?php 
+
+//Info for products
+$itemid = 9;
+//Add to cart functionality
+include "../addtocart.php";
+
+?>
 
   <div class="card-wrapper">
       <div class="card">
@@ -56,16 +65,18 @@
             Wireless and simple setup with the HP app
             <br>
               Available: <span>in stock</span><br>
-             Category: <span> <a href="electronics.html">Electronics</a></span>
+             Category: <span> <a href="../categories/electronics.php">Electronics</a></span>
             
             </p>
           </div>
 
           <div class="purchase-info">
-            <input type="number" min="0" value="1" />
-            <button type="button" class="btn add-cart">
-              Add to Cart <i class="fas fa-shopping-cart"></i>
-            </button>
+            <form action="Printer.php" method="post" enctype="multipart/form-data">
+              <input type="number" name="quantity" min="0" value="1" />
+              <button type="submit" class="btn add-cart">
+              Add to Cart<i class="fas fa-shopping-cart"></i>
+              </button>
+            </form>
           </div>
 
           <div class="social-links">

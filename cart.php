@@ -1,7 +1,19 @@
-<?php include "../header.php";?>
-    <link rel="stylesheet" href="../css/cartStyle.css">
-    
+<?php
+include_once "header.php";
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    // header("Location: login.php");
+    echo '<script>alert("Please log in first.");</script>';
+    die();
+}
+// else{
+//     include "header.php";
+// }
+
+?>
+<link rel="stylesheet" href="../css/cartStyle.css">
+
   <main>
+  <form action="" method="post">
     <div class="basket">
       <div class="basket-labels">
         <ul>
@@ -11,83 +23,117 @@
           <li class="subtotal">Subtotal</li>
         </ul>
       </div>
-      <div class="basket-product">
-        <div class="item">
-          <div class="product-image">
-            <img src="../img/Airpods1.jpg" alt="Placholder Image 2" class="product-frame">
-          </div>
-          <div class="product-details">
-            <h1><strong><span class="item-quantity">1</span> Airpods 3rd generation</strong> Apple</h1>
-            <p><strong>Graved</strong></p>
-          </div>
-        </div>
-        <div class="price">210.99</div>
-        <div class="quantity">
-          <input type="number" value="1" min="1" class="quantity-field">
-        </div>
-        <div class="subtotal">210.99</div>
-        <div class="remove">
-          <button>Remove</button>
-        </div>
-      </div>
-      <div class="basket-product">
-        <div class="item">
-          <div class="product-image">
-            <img src="../img/Lipstick1.jpg" alt="Placholder Image 2" class="product-frame">
-          </div>
-          <div class="product-details">
-            <h1><strong><span class="item-quantity">2</span> Magenta color Lipstick</strong> NYX </h1>
-            <p><strong>Matt</strong></p>
-          </div>
-        </div>
-        <div class="price">9.99</div>
-        <div class="quantity">
-          <input type="number" value="1" min="1" class="quantity-field">
-        </div>
-        <div class="subtotal">9.99</div>
-        <div class="remove">
-          <button>Remove</button>
-        </div>
-      </div>
-    <div class="basket-product">
-      <div class="item">
-        <div class="product-image">
-          <img src="../img/Blanket2.jpeg" alt="Placholder Image 2" class="product-frame">
-        </div>
-        <div class="product-details">
-          <h1><strong><span class="item-quantity">1</span> Soft fluffy blanket</strong> Queen & King</h1>
-          <p><strong>blue</strong></p>
-        </div>
-      </div>
-      <div class="price">20.99</div>
-      <div class="quantity">
-        <input type="number" value="1" min="1" class="quantity-field">
-      </div>
-      <div class="subtotal">20.99</div>
-      <div class="remove">
-        <button>Remove</button>
-      </div>
+      <?php
+      //Get items from user's cart
+      $subtotal_all = 0;
+      //Check if anything was removed
+      if(isset($_GET["id_delete"])){
+        for($i = 0; $i < sizeof($_SESSION["cartItems"]); $i++){
+          if($_SESSION["cartItems"][$i]["itemid"] == $_GET["id_delete"]){
+            $_SESSION["cartItems"][$i]["qty"] = 0;
+          }
+        }
+      }
+      //Check if anything was updated
+      foreach($_POST as $k => $v){
+        if (strpos($k, 'quantity') !== false && is_numeric($v)) {
+          $itemid = str_replace('quantity-', '', $k);
+          // abs() function will prevent minus quantity and (int) will make sure the number is an integer
+          $qty = abs((int)$v);
+            if($qty > 0){
+            for($i = 0; $i < sizeof($_SESSION["cartItems"]); $i++){
+              if($_SESSION["cartItems"][$i]["itemid"] == $itemid){
+                $_SESSION["cartItems"][$i]["qty"] = $qty;
+              }
+            }
+          }
+          
+          // Always do checks and validation
+      }
+      }
+      if(isset($_SESSION["cartItems"])){
+        for($i=0; $i < sizeof($_SESSION["cartItems"]); $i++){
+          $itemid = $_SESSION["cartItems"][$i]["itemid"];
+          $qty = $_SESSION["cartItems"][$i]["qty"];
+          if($qty > 0){
+          $prod_info = $link->prepare("SELECT product_name, product_price, product_onsale, product_saleprice, product_img FROM products WHERE id = ?");
+          $prod_info->bind_param("i",$itemid);
+          $prod_info->execute();
+          $prod_result = $prod_info->get_result();
+            // echo "Yo <br>";
+            if ($result->num_rows > 0) {
+              // echo "Hello <br>";
+              while($row = $prod_result->fetch_assoc()) {
+                // echo " Steven <br>";
+                $images = explode("|",$row["product_img"]);
+                if ($row["product_onsale"] == 1){
+                  $subtotal = $qty * $row["product_saleprice"];
+                }
+                else{
+                  $subtotal = $qty * $row["product_price"];
+                }
+                $subtotal_all += $subtotal;
+                $txt = '<div class="basket-product">
+                <div class="item">
+                  <div class="product-image">
+                    <img src="../img/' . $images[0] . '" alt="Placholder Image 2" class="product-frame">
+                  </div>
+                  <div class="product-details">
+                    <h1><strong><span class="item-quantity"> </span>' . $row["product_name"] . '</strong></h1>
+                  </div>
+                </div>
+                <div class="price">';
+                if($row["product_onsale"] == 1){
+                  $txt = $txt . $row["product_saleprice"];
+                }
+                else{
+                  $txt = $txt . $row["product_price"];
+                }
+                
+                $txt = $txt . '</div>
+                <div class="quantity">
+                  <input type="number" name="quantity-'.$itemid .'" value="' . $qty .'" min="1" class="quantity-field">
+                </div>
+                <div class="subtotal">'. $subtotal . '</div>
+                <div class="remove">
+                  <button><a href="cart.php?id_delete= '. $itemid . '">Remove</a></button>
+                </div>
+              </div>
+                ';
+              echo $txt;
+              }
+              }
+        }
+      }
+      }
+      $qst = number_format($subtotal_all * 0.09975,2,"."," ");
+      $gst = number_format($subtotal_all * 0.05,2,"."," ");
+      $link->close();
+      ?>
     </div>
+    </form>
     <br/>
 
+    <aside>
     <div class="basket-module">
       <label for="promo-code">Add a promo code</label>
       <input id="promo-code" type="text" name="promo-code" maxlength="5" class="promo-code-field">
       <button class="promo-code-cta">Apply</button>
     </div>
   </div>
-    <aside>
+  </form>
+    <!-- <aside> -->
       <div class="summary">
         <div class="summary-total-items"><span class="total-items"></span> Checkout Summary</div>
         <div class="summary-subtotal">
           <div class="subtotal-title">Subtotal</div>
-          <div class="subtotal-value final-value" id="basket-subtotal">251.96</div>
+          <div class="subtotal-value final-value" id="basket-subtotal"><?php echo $subtotal_all;?></div>
           <div class="subtotal-title">QST</div>
-          <div class="subtotal-value final-value" id="basket-subtotal"> 0.09975</div>
+          <div class="subtotal-value final-value" id="basket-subtotal"><?php echo $qst;?></div>
           <div class="subtotal-title">GST</div>
-          <div class="subtotal-value final-value" id="basket-subtotal">0.05</div>
+          <div class="subtotal-value final-value" id="basket-subtotal"><?php echo $gst;?></div>
           <div class="subtotal-title">Shipping fees</div>
-          <div class="subtotal-value final-value" id="basket-subtotal">6.99</div>
+          <div class="subtotal-value final-value" id="basket-subtotal"><?php echo $subtotal_all + $qst + $gst;?></div>
           <div class="summary-promo hide">
             <div class="promo-title">Promotion</div>
             <div class="promo-value final-value" id="basket-promo"></div>
@@ -105,7 +151,7 @@
           <div class="total-value final-value" id="basket-total">285.20</div>
         </div>
         <div class="summary-checkout">
-         <a href="../src/checkout.html"> <button class="checkout-cta">Continue Checkout</button></a>
+         <a href="checkout.php"> <button class="checkout-cta">Continue Checkout</button></a>
         </div>
       </div>
     </aside>
@@ -113,5 +159,6 @@
    
 
 <!--Link to JS-->
-<script src="../js/cart.js"></script>
-<?php include "../footer.php";?>
+<!-- <script src="../js/cart.js"></script>
+<script src="../js/jquery-3.0.0.min.js"></script> -->
+<?php include "footer.php";?>
