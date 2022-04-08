@@ -13,7 +13,7 @@ require_once "config.php";
 
 
 function loginValidInput($username,$password){
-    if($email=="" || $password== ""){
+    if($username="" || $password== ""){
         return true;
     }else{
         return false;
