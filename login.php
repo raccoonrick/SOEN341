@@ -11,11 +11,14 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 // Include config file
 require_once "config.php";
 
- function withInput($iUsername, $iPassword)
-    {
-        $this->mUsername = $iUsername;
-        $this->mPassword = $iPassword;
+
+function loginValidInput($username,$password){
+    if($email=="" || $password== ""){
+        return true;
+    }else{
+        return false;
     }
+}
 // Define variables and initialize with empty values
 $username = $password = "";
 
