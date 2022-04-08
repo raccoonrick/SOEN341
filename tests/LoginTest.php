@@ -16,13 +16,13 @@ class LoginTest extends TestCase
        
         //Wrong Password
        
-        $this->assertFalse(withInput(__TESTUSERNAME__, 'admine'));
+        $this->assertFalse(loginValidInput(__TESTUSERNAME__, 'admine'));
     }
 
    public function testLoginWrongUsername(): void
     {
        
-        $this->assertFalse(withInput('admine', __TESTPASSWORD__));
+        $this->assertFalse(loginValidInput('admine', __TESTPASSWORD__));
     }
 
    public function testLoginSuccess(): void
@@ -30,7 +30,7 @@ class LoginTest extends TestCase
       
         //Login Success
       
-        $this->assertTrue(withInput(__TESTUSERNAME__, __TESTPASSWORD__));
+        $this->assertTrue(loginValidInput(__TESTUSERNAME__, __TESTPASSWORD__));
     }
 
 //    function testLogOut(): void
