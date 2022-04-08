@@ -10,28 +10,37 @@ define('__TESTPASSWORD__', 'admin', true);
 
 class LoginTest extends TestCase
 {
-
-   public function testLoginWrongPass(): void
-    {
+public function testLoginInput() {
+            $email ="";
+            $password ="";
+            $email2 = "Email";
+            $password2 ="password";
+            $this->assertFalse(loginValidInput($email2,$password2));
+            $this->assertTrue(loginValidInput($email,$password2));
+            $this->assertTrue(loginValidInput($email2,$password));
+        }
+//    public function testLoginWrongPass(): void
+//     {
        
-        //Wrong Password
+//         //Wrong Password
        
-        $this->assertFalse(loginValidInput(__TESTUSERNAME__, 'admine'));
-    }
+//         $this->assertFalse(loginValidInput(__TESTUSERNAME__, 'admine'));
+//     }
 
-   public function testLoginWrongUsername(): void
-    {
+//    public function testLoginWrongUsername(): void
+//     {
        
-        $this->assertFalse(loginValidInput('admine', __TESTPASSWORD__));
-    }
+//         $this->assertFalse(loginValidInput('admine', __TESTPASSWORD__));
+//     }
 
-   public function testLoginSuccess(): void
-    {
+//    public function testLoginSuccess(): void
+//     {
       
-        //Login Success
+//         //Login Success
       
-        $this->assertTrue(loginValidInput(__TESTUSERNAME__, __TESTPASSWORD__));
-    }
+//         $this->assertTrue(loginValidInput(__TESTUSERNAME__, __TESTPASSWORD__));
+//     }
+   
 
 //    function testLogOut(): void
 //    {
