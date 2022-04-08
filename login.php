@@ -1,4 +1,9 @@
 <?php
+function WithInput($iUsername, $iPassword)
+    {
+        $this->mUsername = $iUsername;
+        $this->mPassword = $iPassword;
+    }
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
