@@ -13,11 +13,11 @@ class LoginTest extends TestCase
 public function testLoginInput() {
             $email ="admin";
             $password ="admin";
-            $email2 = "Email";
-            $password2 ="password";
+            $email2 = "";
+            $password2 ="";
             $this->assertFalse(loginValidInput($email2,$password2));
             $this->assertTrue(loginValidInput($email,$password));
-            $this->assertFalse(loginValidInput($email2,$password));
+         
         }
 //    public function testLoginWrongPass(): void
 //     {
