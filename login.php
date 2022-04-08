@@ -1,9 +1,5 @@
 <?php
-function WithInput($iUsername, $iPassword)
-    {
-        $this->mUsername = $iUsername;
-        $this->mPassword = $iPassword;
-    }
+
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
@@ -14,7 +10,12 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 }
 // Include config file
 require_once "config.php";
- 
+
+ function WithInput($iUsername, $iPassword)
+    {
+        $this->mUsername = $iUsername;
+        $this->mPassword = $iPassword;
+    }
 // Define variables and initialize with empty values
 $username = $password = "";
 
