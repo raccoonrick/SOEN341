@@ -11,13 +11,13 @@ define('__TESTPASSWORD__', 'admin', true);
 class LoginTest extends TestCase
 {
 public function testLoginInput() {
-            $email ="";
-            $password ="";
+            $email ="admin";
+            $password ="admin";
             $email2 = "Email";
             $password2 ="password";
             $this->assertFalse(loginValidInput($email2,$password2));
-            $this->assertTrue(loginValidInput($email,$password2));
-            $this->assertTrue(loginValidInput($email2,$password));
+            $this->assertTrue(loginValidInput($email,$password));
+            $this->assertFalse(loginValidInput($email2,$password));
         }
 //    public function testLoginWrongPass(): void
 //     {
