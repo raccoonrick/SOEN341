@@ -1,5 +1,5 @@
 <?php
-
+include "verifylogin.php";
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
@@ -8,22 +8,17 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
   // echo "<script>history.back();</script>";
   exit;
 }
-// Include config file
-require_once "config.php";
 
 
-function loginValidInput($username,$password){
-    if($username="admin" || $password== "admin"){
-        return true;
-    }else{
-        return false;
-    }
-}
+
+
 // Define variables and initialize with empty values
 $username = $password = "";
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
- 
+  // Include config file
+  require_once "config.php";
+
   // Check if username is empty
   if(!empty(trim($_POST["username"]))){
       $username = trim($_POST["username"]);

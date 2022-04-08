@@ -1,7 +1,5 @@
 <?php
-require "login.php";
-
-
+require "verifylogin.php";
 use PHPUnit\Framework\TestCase;
 
 //Account Used for testing
