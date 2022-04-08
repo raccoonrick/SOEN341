@@ -11,7 +11,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 // Include config file
 require_once "config.php";
 
- function WithInput($iUsername, $iPassword)
+ function withInput($iUsername, $iPassword)
     {
         $this->mUsername = $iUsername;
         $this->mPassword = $iPassword;
