@@ -20,6 +20,7 @@ function checkifInCart($itemid){
   return false;
 }
 
+
 if(isset($_SERVER["REQUEST_METHOD"])){
   if($_SERVER["REQUEST_METHOD"] == "POST"){
 
