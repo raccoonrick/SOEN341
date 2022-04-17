@@ -32,6 +32,7 @@ for($i = 0; $i < sizeof($_SESSION["cartItems"]); $i++){
     }
 
     
+    
 }
 
 $link->close();
