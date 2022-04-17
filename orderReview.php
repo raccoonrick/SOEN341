@@ -128,6 +128,7 @@
                                                echo'  <a class="btn btn-sm btn-secondary" href="#"><i class="icofont-refresh"></i> View</a>
                                                <a class="btn btn-sm btn-secondary" href="./cancel.php"><i class="icofont-refresh"></i> Cancel Order</a>';
                                              ?>
+                                               
                                                 
                                            </div>
                                            <p class="mb-0 text-black text-primary pt-2"><span class="text-black font-weight-bold"> Total Paid:</span> $12.99
