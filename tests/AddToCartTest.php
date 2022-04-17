@@ -14,4 +14,5 @@ class AddToCartTest extends TestCase{
         $this->assertFalse(checkValidQuantity(-9));
     }
 }
+
 ?>
