@@ -5,6 +5,7 @@
    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script> 
    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
   
+
    <div class="row">
     <div class="col-75">
       <div class="container">
